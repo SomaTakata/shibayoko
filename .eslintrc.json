@@ -1,4 +1,8 @@
 {
+  "plugins": ["unused-imports"],
+  "rules": {
+    "unused-imports/no-unused-imports": "error"
+  },
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended-type-checked","next/core-web-vitals"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
