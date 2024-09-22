@@ -1,60 +1,14 @@
-import Link from "next/link";
-import XIcon from '@mui/icons-material/X';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import MarqueeText from "@/feature/components/MarqueeText";
+import Header from "@/feature/layout/Header";
 
-export default function Home() {
+
+const Home = () => {
   return (
     <div className="flex flex-col overflow-x-hidden">
-      <header className="border-b-[3px] border-black">
-        <div className="py-5 px-10 flex items-center justify-between border-b-[3px] border-black">
-          <div className="flex gap-6 items-center">
-
-          <h1 className="font-roboto font-black text-[26px]">SOMA TAKATA</h1>
-          <span className="font-roboto font-semibold text-[11px] w-72 flex flex-wrap">This is the portfolio site of Soma Takata, a Japanese man Software Engineer based in Saitama. I like Next.js.</span>
-          </div>
-          <div className="flex gap-12">
-            <div className="flex gap-8 font-bold items-center">
-              <div className="font-roboto">WORK</div>
-              <div className="font-roboto">PROFILE</div>
-              <div className="font-roboto">NEWS</div>
-            </div>
-            <div className="flex gap-4 items-center">
-              <Link href="/ja"><GitHubIcon/></Link>
-              <Link href="/ja"><XIcon/></Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative flex overflow-x-hidden">
-          <div className="py-[3px] animate-marquee whitespace-nowrap flex">
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-           
-          </div>
-
-          <div className="absolute top-0 py-[3px] animate-marquee2 whitespace-nowrap flex">
-          <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">芝浦工業大学 26卒</span>
-            <span className="text-[10px] mx-4 tracking-widest font-black">プログラミングサークルTechNova代表</span>
-           
-          </div>
-        </div>
-      </header>
+      <Header />
+      <MarqueeText />
     </div>
   );
-}
+};
+
+export default Home;
