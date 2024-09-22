@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${roboto.variable} ${notoJP.variable}${notoJP.className}`}
+        className={`${roboto.variable} ${notoJP.variable} ${notoJP.className}`}
       >
         {children}
       </body>

@@ -13,11 +13,27 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        roboto: ["var(--font-roboto)", "sans-serif"],
-        notoJP: ["var(--font-notojp)", "sans-serif"],
-      }
+        roboto: ["var(--font-roboto)"],
+        notoJP: ["var(--font-notojp)"],
+      },
+      animation: {
+        marquee: 'marquee 30s linear infinite',
+        marquee2: 'marquee2 30s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
     },
   },
-  plugins: [],
+  variants: {},
+  plugins: []
 };
+
 export default config;
