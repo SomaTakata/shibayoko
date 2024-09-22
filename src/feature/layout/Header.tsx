@@ -7,7 +7,7 @@ const Header = () => {
     <header className="py-5 px-10 flex items-center justify-between border-b-[3px] border-black">
       <div className="flex gap-6 items-center justify-center lg:justify-normal w-full">
         {/* 名前は常に表示 */}
-        <h1 className="font-roboto font-black text-[26px]">SOMA TAKATA</h1>
+        <h1 className="font-roboto font-black text-3xl">SOMA TAKATA</h1>
         
         {/* この説明部分は、モバイルやタブレットでは非表示 */}
         <span className="font-roboto font-semibold text-[11px] w-72 lg:flex flex-wrap hidden">
