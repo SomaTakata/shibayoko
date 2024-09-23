@@ -1,0 +1,42 @@
+import ViewAll from './ViewAll'; // ViewAll コンポーネントをインポート
+import NewsCard from './NewsCard'; // NewsCard コンポーネントをインポート
+
+const newsItems = [
+  {
+    date: '2024.7.10',
+    description: 'WEBサイトをリニューアル致しました！',
+    imageSrc: '/news.png',
+  },
+  {
+    date: '2024.7.11',
+    description: '新機能を追加しました！',
+    imageSrc: '/news.png',
+  },
+];
+
+const NewsSection = () => {
+  return (
+    <section className="flex flex-col gap-8 border-t-[3px] border-black px-5 py-12 sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16">
+      <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+        <h2 className="font-roboto text-4xl sm:5xl font-black tracking-widest text-white text-stroke">NEWS</h2>
+      </div>
+
+      {/* News Cards */}
+      <div className="flex flex-col w-full border-t-2 border-black">
+        {newsItems.map((news, index) => (
+          <NewsCard
+            key={index}
+            date={news.date}
+            description={news.description}
+            imageSrc={news.imageSrc}
+          />
+        ))}
+      </div>
+
+      {/* View All News */}
+      <ViewAll text="VIEW ALL NEWS" position="end" />
+    </section>
+  );
+};
+
+export default NewsSection;
