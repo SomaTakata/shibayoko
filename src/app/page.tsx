@@ -7,6 +7,13 @@ import Footer from "@/feature/layout/Footer";
 import Header from "@/feature/layout/Header";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const Home = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  };
   return (
     <div className="flex flex-col">
       <Header />
@@ -24,7 +31,7 @@ const Home = () => {
       <div className="w-full h-16  flex lg:hidden border-t-[2px] border-black ">
         <div className="w-full justify-between border-r-[2px] border-black"></div>
         <div className="w-24 flex justify-center items-center">
-        <KeyboardArrowUpIcon className="w-10 h-10"/>
+        <KeyboardArrowUpIcon className="w-10 h-10 hover:scale-125 transition-all duration-300 transform cursor-pointer" onClick={scrollToTop} />
       </div></div>
         <Footer />
     </div>
