@@ -1,4 +1,5 @@
 import MarqueeText from "@/feature/components/MarqueeText";
+import NewsSection from "@/feature/components/NewsSection";
 import WorkSection from "@/feature/components/WorkSection";
 import Header from "@/feature/layout/Header";
 
@@ -15,6 +16,12 @@ const Home = () => {
 
       {/* WORKセクション */}
       <WorkSection />
+     {/* News Section */}
+   
+
+        {/* Add NewsSection here */}
+        <NewsSection />
+    
     </div>
   );
 };
