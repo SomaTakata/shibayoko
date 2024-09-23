@@ -1,10 +1,37 @@
-const WorkCard = ({ title, year, projectName }: { title: string; year: string; projectName: string }) => (
-      <div className="flex flex-col gap-1 sm:gap-2">
-        <div className="aspect-square rounded-lg border-2 border-black bg-white"></div>
-        <div className="mt-1 text-sm font-bold sm:text-base">{title} | {year}</div>
-        <div className="text-sm font-bold sm:text-base">{projectName}</div>
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface WorkCardProps {
+  title: string;
+  year: string;
+  projectName: string;
+  imageSrc: string; 
+  projectLink: string; 
+}
+
+const WorkCard = ({ title, year, projectName, imageSrc, projectLink }: WorkCardProps) => (
+  <Link href={projectLink}>
+    <div className="flex flex-col gap-2">
+      {/* カードの画像部分 */}
+      <div className="aspect-square border-2 border-black rounded-lg bg-white flex justify-center items-center p-4">
+        <div className="relative w-full h-full">
+          <Image 
+            src={imageSrc} 
+            alt={`${title} - ${projectName}`} 
+            layout="fill" 
+            objectFit="contain" 
+            className="rounded-lg"
+          />
+        </div>
       </div>
-    );
-    
-    export default WorkCard;
-    
+
+      {/* テキスト部分 */}
+      <div className="text-sm font-semibold mt-1">
+        {title} | {year}
+      </div>
+      <div className="text-sm font-semibold">{projectName}</div>
+    </div>
+  </Link>
+);
+
+export default WorkCard;

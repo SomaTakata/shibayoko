@@ -2,12 +2,10 @@ import ViewAll from "./ViewAll";
 import WorkCard from "./WorkCard";
 
 const workItems = [
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
-  { title: 'フロントエンド', year: '2023', projectName: 'NginLink' },
+  { title: 'フロントエンド', year: '2023', projectName: 'NginLink', projectLink: '/work', imageSrc: '/nginlink.png' },
+  { title: 'フロントエンド', year: '2023', projectName: 'NginLink', projectLink: '/work', imageSrc: '/nginlink.png' },
+  { title: 'フロントエンド', year: '2023', projectName: 'NginLink', projectLink: '/work', imageSrc: '/nginlink.png' },
+
 ];
 
 const WorkSection = () => (
@@ -22,6 +20,8 @@ const WorkSection = () => (
             title={work.title}
             year={work.year}
             projectName={work.projectName}
+            projectLink={work.projectLink}
+            imageSrc={work.imageSrc}
           />
         ))}
   
