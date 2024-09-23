@@ -9,7 +9,7 @@ const linkItems = [
 ];
 
 const LinkSection = () => (
-  <section className="flex flex-col gap-6 px-5 py-14 sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 ">
+  <section className="flex flex-col gap-6 px-5 py-14  pb-20 sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 ">
    
         <h2 className="font-roboto text-4xl sm:text-5xl font-black tracking-widest text-white text-stroke">LINK</h2>
 
