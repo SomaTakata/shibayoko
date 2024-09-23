@@ -18,7 +18,7 @@ const NewsSection = () => {
   return (
     <section className="flex flex-col gap-8 border-t-[3px] border-black px-5 py-12 sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16">
       <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
-        <h2 className="font-roboto text-4xl sm:5xl font-black tracking-widest text-white text-stroke">NEWS</h2>
+        <h2 className="font-roboto text-4xl sm:text-5xl font-black tracking-widest text-white text-stroke">NEWS</h2>
       </div>
 
       {/* News Cards */}
