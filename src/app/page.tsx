@@ -2,6 +2,7 @@
 import LinkSection from "@/feature/components/LinkSection";
 import MarqueeText from "@/feature/components/MarqueeText";
 import NewsSection from "@/feature/components/NewsSection";
+import ProfileCard from "@/feature/components/ProfileCard";
 import WorkSection from "@/feature/components/WorkSection";
 import Footer from "@/feature/layout/Footer";
 import Header from "@/feature/layout/Header";
@@ -25,9 +26,20 @@ const Home = () => {
       </section>
 
       <WorkSection />
+       {/* スペーサーセクション */}
+       <section>
+        <div className="flex h-[750px] items-center justify-center bg-gray-100 -z-10">
+        <ProfileCard />
+        </div>
+      </section>
         <NewsSection />
         <LinkSection />
 
+      <section>
+        <div className="flex h-[300px]  items-center justify-center bg-white -z-10">
+        
+        </div>
+      </section>
       <div className="w-full h-16  flex lg:hidden border-t-[2px] border-black ">
         <div className="w-full justify-between border-r-[2px] border-black"></div>
         <div className="w-24 flex justify-center items-center">

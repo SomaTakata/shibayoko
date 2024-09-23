@@ -26,7 +26,7 @@ const WorkSection = () => (
         ))}
   
       </div>
-      <ViewAll text="VIEW ALL" position="center" />
+      <ViewAll text="VIEW ALL" position="center" width='w-64'/>
 
   </section>
 );

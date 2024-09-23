@@ -62,6 +62,10 @@ const config: Config = {
           '-webkit-text-stroke': '2px black',
           'text-stroke': '2px black',
         },
+        '.text-stroke-1': {
+          '-webkit-text-stroke': '1px black',
+          'text-stroke': '1px black',
+        },
         '.text-stroke-white': {
           '-webkit-text-stroke': '1px white',
           'text-stroke': '1px white',

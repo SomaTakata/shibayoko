@@ -29,7 +29,7 @@ const NewsSection = () => {
         ))}
       </div>
 
-      <ViewAll text="VIEW ALL NEWS" position="end" />
+      <ViewAll text="VIEW ALL NEWS" position="end" width='w-64'/>
     </section>
   );
 };

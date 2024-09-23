@@ -17,12 +17,12 @@ const Header = () => {
       
       {/* この部分もモバイルやタブレットでは非表示 */}
       <div className="hidden gap-12 lg:flex ">
-        <nav className="flex items-center gap-8 font-bold">
+        <nav className="flex items-center gap-12 font-bold">
           <div className="font-roboto">WORK</div>
           <div className="font-roboto">PROFILE</div>
           <div className="font-roboto">NEWS</div>
         </nav>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <Link href="/ja">
             <GitHubIcon />
           </Link>
@@ -30,6 +30,8 @@ const Header = () => {
             <XIcon />
           </Link>
         </div>
+
+   
       </div>
     </header>
   );

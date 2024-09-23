@@ -33,7 +33,7 @@ const Footer = () => {
     <footer className={`h-16 fixed lg:relative border-t-[2px] lg:border-t-[3px] border-black bottom-0 right-0 left-0 lg:h-[100px] flex items-center justify-between bg-white`}>
       {/* 大画面用ナビゲーション */}
       <div className="hidden h-[100px] gap-12 items-center lg:flex px-10 py-5 lg:py-10 border-r-[3px] border-black w-full">
-        <nav className="flex items-center gap-10 font-bold">
+        <nav className="flex items-center gap-12 font-bold">
           <div className="font-roboto">WORK</div>
           <div className="font-roboto">PROFILE</div>
           <div className="font-roboto">NEWS</div>
@@ -47,10 +47,41 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      <div className='lg:flex hidden '>
 
+  {/* モード切り替えトグルスイッチ */}
+  <div className="border-r-[3px] h-[100px] gap-4 border-black flex items-center justify-center px-8">
+          <div className="flex gap-4">
+            <div
+              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
+                mode === 'light' ? 'bg-yellow-500 text-white scale-90' : 'scale-75 hover:scale-100'
+              }`}
+              onClick={() => toggleMode('light')}
+            >
+              <WbSunnyIcon className="w-8 h-8" />
+            </div>
+            <div
+              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
+                mode === 'dark' ? 'bg-gray-800 text-white scale-90' : 'scale-75 hover:scale-100'
+              }`}
+              onClick={() => toggleMode('dark')}
+            >
+              <DarkModeIcon className="w-8 h-8" />
+            </div>
+            <div
+              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
+                mode === 'system' ? 'bg-blue-500 text-white scale-90' : 'scale-75 hover:scale-100'
+              }`}
+              onClick={() => toggleMode('system')}
+            >
+              <LaptopChromebookIcon className="w-8 h-8" />
+            </div>
+          </div>
+        </div>
       {/* Topに戻るボタン */}
       <div className="w-24 hidden lg:flex justify-center items-center">
       <KeyboardArrowUpIcon className="w-10 h-10 hover:scale-125 transition-all duration-300 transform cursor-pointer" onClick={scrollToTop} />
+      </div>
       </div>
 
       {/* 小画面用のモード切り替えとメニュー */}
