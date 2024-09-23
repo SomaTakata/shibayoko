@@ -12,7 +12,7 @@ const NewsCard= ({ date, description, imageSrc }:NewsCardProps) => (
     <div className="flex items-center gap-6 md:gap-12">
       <p className='hidden md:flex text-lg font-bold'>{date}</p>
       <Image
-        height={100}
+        height={80}
         width={150}
         src={imageSrc}
         alt="News"
@@ -25,7 +25,7 @@ const NewsCard= ({ date, description, imageSrc }:NewsCardProps) => (
       </div>
     </div>
 
-    <button className="border-2 border-black rounded-full p-3">
+    <button className="border-2 border-black rounded-full p-2 items-center justify-center lg:p-3">
       <EastIcon className='w-6 h-5'/>
     </button>
   </div>
