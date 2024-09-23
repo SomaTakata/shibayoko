@@ -1,3 +1,4 @@
+import LinkSection from "@/feature/components/LinkSection";
 import MarqueeText from "@/feature/components/MarqueeText";
 import NewsSection from "@/feature/components/NewsSection";
 import WorkSection from "@/feature/components/WorkSection";
@@ -14,13 +15,9 @@ const Home = () => {
         <div className="flex items-center justify-center px-14 py-32"></div>
       </section>
 
-      {/* WORKセクション */}
       <WorkSection />
-     {/* News Section */}
-   
-
-        {/* Add NewsSection here */}
         <NewsSection />
+        <LinkSection />
     
     </div>
   );
