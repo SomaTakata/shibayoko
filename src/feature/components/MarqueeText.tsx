@@ -6,47 +6,47 @@ const MarqueeText = () => {
   
     return (
       <div className="relative flex overflow-x-hidden border-b-[3px] border-black">
-        <div className="py-[3px] animate-marquee whitespace-nowrap flex">
+        <div className="flex animate-marquee whitespace-nowrap py-[3px]">
           {textItems.map((text, index) => (
-            <span key={index} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={index} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={`duplicate-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`duplicate-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={index} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={index} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={`duplicate-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`duplicate-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
         </div>
   
-        <div className="absolute top-0 py-[3px] animate-marquee2 whitespace-nowrap flex">
+        <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap py-[3px]">
           {textItems.map((text, index) => (
-            <span key={`scroll-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`scroll-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={`scroll-duplicate-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`scroll-duplicate-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={`scroll-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`scroll-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
           {textItems.map((text, index) => (
-            <span key={`scroll-duplicate-${index}`} className="text-[10px] mx-4 tracking-widest font-black">
+            <span key={`scroll-duplicate-${index}`} className="mx-4 text-[10px] font-black tracking-widest">
               {text}
             </span>
           ))}
