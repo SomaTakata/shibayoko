@@ -8,9 +8,9 @@ interface NewsCardProps {
 }
 
 const NewsCard= ({ date, description, imageSrc }:NewsCardProps) => (
-  <div className="flex justify-between items-center border-b-2 border-black py-4">
-    <div className="flex items-center gap-6">
-      {/* News Image */}
+  <div className="flex justify-between items-center border-b-[2px]  lg:border-b-[3px] border-black py-4 md:py-6">
+    <div className="flex items-center gap-6 md:gap-12">
+      <p className='hidden md:flex text-lg font-bold'>{date}</p>
       <Image
         height={100}
         width={150}
@@ -19,16 +19,14 @@ const NewsCard= ({ date, description, imageSrc }:NewsCardProps) => (
         className="rounded-lg border-2 border-black"
       />
 
-      {/* Date and Description */}
       <div className="flex flex-col gap-2 sm:gap-3">
-        <span className="text-sm sm:text-base font-bold">{date}</span>
-        <p className="text-sm sm:text-base font-bold">{description}</p>
+        <span className="text-sm sm:text-base md:hidden font-bold">{date}</span>
+        <p className="text-sm sm:text-base font-bold md:ml-4 md:text-lg">{description}</p>
       </div>
     </div>
 
-    {/* Arrow Button */}
-    <button className="border-2 border-black rounded-full p-2">
-      <EastIcon />
+    <button className="border-2 border-black rounded-full p-3">
+      <EastIcon className='w-6 h-5'/>
     </button>
   </div>
 );

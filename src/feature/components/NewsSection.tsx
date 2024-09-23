@@ -16,9 +16,9 @@ const newsItems = [
 
 const NewsSection = () => {
   return (
-    <section className="flex flex-col gap-6 border-b-[3px] border-black px-5 py-12 sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16">
+    <section className="flex flex-col gap-6 border-b-[2px]  lg:border-b-[3px] border-black px-5 py-12 sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16">
         <h2 className="font-roboto text-4xl sm:text-5xl font-black tracking-widest text-white text-stroke">NEWS</h2>
-      <div className="flex flex-col w-full border-t-2 border-black">
+      <div className="flex flex-col w-full border-t-[2px]  lg:border-t-[3px] border-black">
         {newsItems.map((news, index) => (
           <NewsCard
             key={index}
