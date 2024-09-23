@@ -21,12 +21,13 @@ const config: Config = {
       animation: {
         marquee: 'marquee 30s linear infinite',
         marquee2: 'marquee2 30s linear infinite',
+        slide: 'slide 3s infinite ease-in-out',  
       },
-      textStroke: {
+      textStrokeWidth: {  
         '1': '1px',
         '2': '2px',
       },
-      textStrokeColor: {
+      textStrokeColor: {  
         black: '#000',
         white: '#fff',
       },
@@ -39,24 +40,48 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' },
         },
+        slide: { 
+          '0%': {
+            transform: 'translateX(-100%)'
+          },
+          '50%': {
+            transform: 'translateX(0)'
+          },
+          '100%': {
+            transform: 'translateX(100%)'
+          }
+        },
       },
     },
   },
   variants: {},
-  plugins: [  function ({ addUtilities }: PluginAPI) {
-    const newUtilities = {
-      '.text-stroke': {
-        '-webkit-text-stroke': '1px black',
-        'text-stroke': '1px black',
-      },
-      '.text-stroke-white': {
-        '-webkit-text-stroke': '1px white',
-        'text-stroke': '1px white',
-      },
-    };
-    addUtilities(newUtilities);
-  },
-]
+  plugins: [
+    function ({ addUtilities }: PluginAPI) {
+      const newUtilities = {
+        '.text-stroke': {
+          '-webkit-text-stroke': '2px black',
+          'text-stroke': '2px black',
+        },
+        '.text-stroke-white': {
+          '-webkit-text-stroke': '1px white',
+          'text-stroke': '1px white',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+    function ({ addUtilities }: PluginAPI) {
+      const newUtilities = {
+        '.hs': {
+          display: 'grid',
+          gap: '10px',
+          'grid-template-columns': 'repeat(6, calc(50% - 40px))',
+          'grid-template-rows': 'minmax(150px, 1fr)',
+          padding: '0 20px',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
 
 export default config;
