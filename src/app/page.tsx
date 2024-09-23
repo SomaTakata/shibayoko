@@ -7,6 +7,7 @@ import WorkSection from "@/feature/components/WorkSection";
 import Footer from "@/feature/layout/Footer";
 import Header from "@/feature/layout/Header";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Image from "next/image";
 const Home = () => {
 
   const scrollToTop = () => {
@@ -36,8 +37,25 @@ const Home = () => {
         <LinkSection />
 
       <section>
-        <div className="flex h-[300px]  items-center justify-center bg-white -z-10">
-        
+        <div className="flex lg:gap-8 h-[280px] sm:h-[380] lg:h-[300px] relative  items-center justify-center bg-white ">
+        <Image
+        height={360}
+        width={450}
+        src="/programing.png"
+        alt="News"
+        className="hidden lg:flex"
+      />
+      
+       <Image
+        height={100}
+        width={180}
+        src="/programing.png"
+        alt="News"
+        className="lg:hidden absolute  "
+      />
+      <h2 className="font-roboto font-bold text-6xl z-0 text-white text-stroke">SOMA TAKATA</h2>
+      
+
         </div>
       </section>
       <div className="w-full h-16  flex lg:hidden border-t-[2px] border-black ">
