@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between border-b-[3px] border-black px-10 py-5">
+    <header className="flex z-20 fixed bg-white top-0 right-0 left-0 items-center justify-between border-b-[2px]  lg:border-b-[3px] border-black px-10 py-5 lg:py-7">
       <div className="flex w-full items-center justify-center gap-6 lg:justify-normal">
         {/* 名前は常に表示 */}
         <h1 className="font-roboto text-3xl font-black">SOMA TAKATA</h1>
