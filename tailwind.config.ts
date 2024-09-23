@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from 'tailwindcss/types/config';
+
 
 const config: Config = {
   content: [
@@ -20,6 +22,14 @@ const config: Config = {
         marquee: 'marquee 30s linear infinite',
         marquee2: 'marquee2 30s linear infinite',
       },
+      textStroke: {
+        '1': '1px',
+        '2': '2px',
+      },
+      textStrokeColor: {
+        black: '#000',
+        white: '#fff',
+      },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
@@ -33,7 +43,20 @@ const config: Config = {
     },
   },
   variants: {},
-  plugins: []
+  plugins: [  function ({ addUtilities }: PluginAPI) {
+    const newUtilities = {
+      '.text-stroke': {
+        '-webkit-text-stroke': '1px black',
+        'text-stroke': '1px black',
+      },
+      '.text-stroke-white': {
+        '-webkit-text-stroke': '1px white',
+        'text-stroke': '1px white',
+      },
+    };
+    addUtilities(newUtilities);
+  },
+]
 };
 
 export default config;
