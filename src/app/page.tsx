@@ -1,15 +1,20 @@
 import MarqueeText from "@/feature/components/MarqueeText";
+import WorkSection from "@/feature/components/WorkSection";
 import Header from "@/feature/layout/Header";
-
 
 const Home = () => {
   return (
     <div className="flex flex-col overflow-x-hidden">
       <Header />
       <MarqueeText />
+      
+      {/* スペーサーセクション */}
       <section>
-        <h2 className="font-roboto text-5xl font-black tracking-widest text-white border-y-2 mt-4 border-black text-stroke">WORK</h2>
+        <div className="flex items-center justify-center px-14 py-32"></div>
       </section>
+
+      {/* WORKセクション */}
+      <WorkSection />
     </div>
   );
 };
