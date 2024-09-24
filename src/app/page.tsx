@@ -1,5 +1,6 @@
 "use client"
 import ImageSection from "@/feature/components/ImageSection";
+import ImageSlider from "@/feature/components/ImageSlider";
 import LinkSection from "@/feature/components/LinkSection";
 import MarqueeText from "@/feature/components/MarqueeText";
 import NewsSection from "@/feature/components/NewsSection";
@@ -23,7 +24,9 @@ const Home = () => {
       
       {/* スペーサーセクション */}
       <section>
-        <div className="flex items-center justify-center px-14 py-32"></div>
+        <div className="flex items-center justify-center px-14 py-20">
+          <ImageSlider/>
+        </div>
       </section>
 
       <WorkSection />
