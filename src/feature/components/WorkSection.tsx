@@ -4,24 +4,24 @@ import WorkCard from "./WorkCard";
 const workItems = [
   {
     title: "フロントエンド",
-    year: "2023",
+    year: "2024",
     projectName: "NginLink",
-    projectLink: "/work",
+    projectLink: "https://github.com/SomaTakata/ngin-link",
     imageSrc: "/nginlink.png",
   },
   {
     title: "フロントエンド",
-    year: "2023",
-    projectName: "NginLink",
-    projectLink: "/work",
-    imageSrc: "/nginlink.png",
+    year: "2024",
+    projectName: "DevQuest",
+    projectLink: "https://github.com/SomaTakata/dev-quest",
+    imageSrc: "/devquest.png",
   },
   {
     title: "フロントエンド",
-    year: "2023",
-    projectName: "NginLink",
-    projectLink: "/work",
-    imageSrc: "/nginlink.png",
+    year: "2024",
+    projectName: "都道府県人口推移",
+    projectLink: "https://github.com/SomaTakata/yumemi-coding-test",
+    imageSrc: "/population.png",
   },
 ];
 

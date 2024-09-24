@@ -1,38 +1,55 @@
-import { Swiper, SwiperSlide } from 'swiper/react';  // SwiperとSwiperSlideをインポート
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';  // Swiper 11.x以降は/modulesからモジュールをインポート
-import 'swiper/css';  // Swiperのスタイル
-import 'swiper/css/pagination';  // ページネーションのスタイル
-import 'swiper/css/navigation';  // ナビゲーションのスタイル
+import { Swiper, SwiperSlide } from "swiper/react"; // SwiperとSwiperSlideをインポート
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules"; // Swiper 11.x以降は/modulesからモジュールをインポート
+import "swiper/css"; // Swiperのスタイル
+import "swiper/css/pagination"; // ページネーションのスタイル
+import "swiper/css/navigation"; // ナビゲーションのスタイル
 
 // Next.jsのImageコンポーネント
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 
 const ImageSlider = () => {
   // スライドに表示する画像のリスト
   const slides = [
-    { src: '/news.png', alt: 'Flowers', title: 'Flowers', projectName: 'Project A' },
-    { src: '/news.png', alt: 'Rose', title: 'Rose', projectName: 'Project B' },
-    { src: '/news.png', alt: 'Lavender', title: 'Lavender', projectName: 'Project C' },
-    { src: '/news.png', alt: 'Pink Flowers', title: 'Pink Flowers', projectName: 'Project D' },
-    { src: '/news.png', alt: 'Red Rose', title: 'Red Rose', projectName: 'Project E' },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "NginLink",
+      projectLink: "https://github.com/SomaTakata/ngin-link",
+      imageSrc: "/nginlink.png",
+    },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "DevQuest",
+      projectLink: "https://github.com/SomaTakata/dev-quest",
+      imageSrc: "/devquest.png",
+    },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "都道府県人口推移",
+      projectLink: "https://github.com/SomaTakata/yumemi-coding-test",
+      imageSrc: "/population.png",
+    },
   ];
 
   return (
     <div className="relative h-full overflow-x-hidden">
       <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation]}  // 使用するモジュールを指定
-        effect={'coverflow'}  // カバーフロー効果を適用
-        loop={true}  // 無限ループ
-        centeredSlides={true}  // 中央寄せにする
+        modules={[EffectCoverflow, Pagination, Navigation]} // 使用するモジュールを指定
+        effect={"coverflow"} // カバーフロー効果を適用
+        loop={true} // 無限ループ
+        centeredSlides={true} // 中央寄せにする
         pagination={{
           clickable: true,
-          el: '.swiper-pagination',  // カスタムクラスのページネーションをターゲット
+          el: ".swiper-pagination", // カスタムクラスのページネーションをターゲット
         }}
         navigation={{
-          nextEl: '.swiper-button-next', 
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
-        grabCursor={true}  // カーソルを掴むような見た目にする
+        grabCursor={true} // カーソルを掴むような見た目にする
         coverflowEffect={{
           rotate: 0,
           stretch: 5,
@@ -60,15 +77,21 @@ const ImageSlider = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             {/* カードの画像部分 */}
-            <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-4">
+            <Link
+              href={slide.projectLink}
+              className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10"
+            >
               <div className="relative size-full">
                 <Image
-                  src={slide.src}  // 画像ソース
-                  alt={`${slide.title} - ${slide.projectName}`}  // 代替テキスト
-                  fill  // `fill`を使って親要素いっぱいに広がる
-                  className="rounded-lg object-contain"  // 画像を親要素に収めてスタイルを適用
+                  src={slide.imageSrc} // 画像ソース
+                  alt={`${slide.title} - ${slide.projectName}`} // 代替テキスト
+                  fill // `fill`を使って親要素いっぱいに広がる
+                  className="rounded-lg object-contain" // 画像を親要素に収めてスタイルを適用
                 />
               </div>
+            </Link>
+            <div className="w-full flex justify-center text-xl font-bold pb-12 pt-4">
+              <p>{slide.projectName}</p>
             </div>
           </SwiperSlide>
         ))}
