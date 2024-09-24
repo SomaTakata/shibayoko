@@ -30,9 +30,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className={`h-16 fixed lg:relative border-t-[2px] lg:border-t-[3px] border-black bottom-0 right-0 left-0 lg:h-[100px] flex items-center justify-between bg-white`}>
+    <footer className={`fixed inset-x-0 bottom-0 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]`}>
       {/* 大画面用ナビゲーション */}
-      <div className="hidden h-[100px] gap-12 items-center lg:flex px-10 py-5 lg:py-10 border-r-[3px] border-black w-full">
+      <div className="hidden h-[100px] w-full items-center gap-12 border-r-[3px] border-black px-10 py-5 lg:flex lg:py-10">
         <nav className="flex items-center gap-12 font-bold">
           <div className="font-roboto">WORK</div>
           <div className="font-roboto">PROFILE</div>
@@ -47,40 +47,40 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className='lg:flex hidden '>
+      <div className='hidden lg:flex '>
 
   {/* モード切り替えトグルスイッチ */}
-  <div className="border-r-[3px] h-[100px] gap-4 border-black flex items-center justify-center px-8">
+  <div className="flex h-[100px] items-center justify-center gap-4 border-r-[3px] border-black px-8">
           <div className="flex gap-4">
             <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === 'light' ? 'bg-yellow-500 text-white scale-90' : 'scale-75 hover:scale-100'
+              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
+                mode === 'light' ? 'scale-90 bg-yellow-500 text-white' : 'scale-75 hover:scale-100'
               }`}
               onClick={() => toggleMode('light')}
             >
-              <WbSunnyIcon className="w-8 h-8" />
+              <WbSunnyIcon className="size-8" />
             </div>
             <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === 'dark' ? 'bg-gray-800 text-white scale-90' : 'scale-75 hover:scale-100'
+              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
+                mode === 'dark' ? 'scale-90 bg-gray-800 text-white' : 'scale-75 hover:scale-100'
               }`}
               onClick={() => toggleMode('dark')}
             >
-              <DarkModeIcon className="w-8 h-8" />
+              <DarkModeIcon className="size-8" />
             </div>
             <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === 'system' ? 'bg-blue-500 text-white scale-90' : 'scale-75 hover:scale-100'
+              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
+                mode === 'system' ? 'scale-90 bg-blue-500 text-white' : 'scale-75 hover:scale-100'
               }`}
               onClick={() => toggleMode('system')}
             >
-              <LaptopChromebookIcon className="w-8 h-8" />
+              <LaptopChromebookIcon className="size-8" />
             </div>
           </div>
         </div>
       {/* Topに戻るボタン */}
-      <div className="w-24 hidden lg:flex justify-center items-center">
-      <KeyboardArrowUpIcon className="w-10 h-10 hover:scale-125 transition-all duration-300 transform cursor-pointer" onClick={scrollToTop} />
+      <div className="hidden w-24 items-center justify-center lg:flex">
+      <KeyboardArrowUpIcon className="size-10 cursor-pointer transition-all duration-300 hover:scale-125" onClick={scrollToTop} />
       </div>
       </div>
 
