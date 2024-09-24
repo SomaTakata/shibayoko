@@ -120,7 +120,7 @@ const ImageSlider = () => {
                 />
               </div>
             </Link>
-            <div className="w-full flex justify-center text-xl font-bold pb-12 pt-4">
+            <div className="w-full  flex justify-center text-xl font-bold pb-12 pt-4">
               <p>{slide.projectName}</p>
             </div>
           </SwiperSlide>

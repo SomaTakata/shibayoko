@@ -3,17 +3,17 @@ import NewsCard from "./NewsCard";
 
 const newsItems = [
   {
-    date: "2024.7.26",
-    description:
-      "ハウテレビジョンでの3ヶ月のエンジニアインターン体験記投稿しました！",
-    imageSrc: "/news1.png",
-    href: "https://zenn.dev/soma_takata/articles/3a5ad127b57e04",
-  },
-  {
     date: "2024.9.17",
     description: "LayerXサマーインターン体験記を投稿しました！",
     imageSrc: "/news2.png",
     href: "https://zenn.dev/soma_takata/articles/3a5ad127b57e04",
+  },
+  {
+    date: "2024.7.26",
+    description:
+      "ハウテレビジョンでの3ヶ月のエンジニアインターン体験記投稿しました！",
+    imageSrc: "/news1.png",
+    href: "https://blog.howtelevision.co.jp/entry/2024/07/26/174358",
   },
 ];
 

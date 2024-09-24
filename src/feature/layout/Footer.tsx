@@ -1,13 +1,9 @@
-import { useState } from "react";
 import Link from "next/link";
 import XIcon from "@mui/icons-material/X";
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
 
 type FooterProps = {
   menuOpen: boolean;
@@ -29,9 +25,15 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
       {/* 大画面用ナビゲーション */}
       <div className="hidden h-[100px] w-full items-center gap-12 border-r-[3px] border-black px-10 py-5 lg:flex lg:py-10">
         <nav className="flex items-center gap-12 font-bold">
-          <div className="font-roboto">WORK</div>
-          <div className="font-roboto">PROFILE</div>
-          <div className="font-roboto">NEWS</div>
+          <Link href="/works" className="font-roboto">
+            WORK
+          </Link>
+          <Link href="/profile" className="font-roboto">
+            PROFILE
+          </Link>
+          <Link href="/news" className="font-roboto">
+            NEWS
+          </Link>
         </nav>
         <div className="flex items-center gap-6">
           <Link href="https://github.com/SomaTakata">

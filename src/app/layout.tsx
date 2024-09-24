@@ -4,13 +4,13 @@ import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100","300","400","500","700", "900"], 
+  weight: ["100", "300", "400", "500", "700", "900"],
   variable: "--font-roboto",
 });
 
 const notoJP = Noto_Sans_JP({
-  subsets: ["latin"], 
-  weight: ["100","300","400","500","700", "900"], 
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
   variable: "--font-notojp",
 });
 
