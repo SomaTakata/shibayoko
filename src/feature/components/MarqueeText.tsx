@@ -5,7 +5,7 @@ const MarqueeText = () => {
     ];
   
     return (
-      <div className="relative flex overflow-x-hidden border-b-[2px]  lg:border-b-[3px] border-black">
+      <div className="relative flex overflow-x-hidden border-b-2  border-black lg:border-b-[3px]">
         <div className="flex animate-marquee whitespace-nowrap py-[3px]">
           {textItems.map((text, index) => (
             <span key={index} className="mx-4 text-[10px] font-black tracking-widest">

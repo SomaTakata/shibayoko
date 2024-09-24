@@ -13,20 +13,19 @@ const WorkCard = ({ title, year, projectName, imageSrc, projectLink }: WorkCardP
   <Link href={projectLink}>
     <div className="flex flex-col gap-2">
       {/* カードの画像部分 */}
-      <div className="aspect-square border-2 border-black rounded-lg bg-white flex justify-center items-center p-4">
-        <div className="relative w-full h-full">
+      <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-4">
+        <div className="relative size-full">
           <Image 
             src={imageSrc} 
             alt={`${title} - ${projectName}`} 
-            layout="fill" 
-            objectFit="contain" 
-            className="rounded-lg"
+            fill
+            className='object-contain'
           />
         </div>
       </div>
 
       {/* テキスト部分 */}
-      <div className="text-sm font-semibold mt-1">
+      <div className="mt-1 text-sm font-semibold">
         {title} | {year}
       </div>
       <div className="text-sm font-semibold">{projectName}</div>

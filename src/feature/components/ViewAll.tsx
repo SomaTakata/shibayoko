@@ -15,11 +15,11 @@ const ViewAll = ({ text, position = 'center', width = 'w-full' }: ViewAllProps) 
     : 'items-center'; // デフォルトでcenter
 
   return (
-    <div className={`mt-8 2-full flex flex-col ${alignmentClass} justify-center`}>
+    <div className={`mt-8 flex flex-col ${alignmentClass} justify-center`}>
       <div className={`flex  ${width} flex-col`}>
         <div className={`flex ${width} items-center justify-between `}>
-          <p className="font-roboto text-xl sm:text-2xl font-bold">{text}</p>
-          <EastIcon className="w-8 h-8" />
+          <p className="font-roboto text-xl font-bold sm:text-2xl">{text}</p>
+          <EastIcon className="size-8" />
         </div>
 
         {/* アニメーション付きのボーダー */}
