@@ -1,21 +1,32 @@
-import EastIcon from '@mui/icons-material/East';
+import EastIcon from "@mui/icons-material/East";
+import Link from "next/link";
 
 interface ViewAllProps {
   text: string;
-  position?: 'start' | 'center' | 'end'; // justify-start, justify-center, justify-end のいずれかを選択
+  href: string;
+  position?: "start" | "center" | "end"; // justify-start, justify-center, justify-end のいずれかを選択
   width?: string; // 幅を調整するための新しいプロップ
 }
 
-const ViewAll = ({ text, position = 'center', width = 'w-full' }: ViewAllProps) => {
+const ViewAll = ({
+  text,
+  position = "center",
+  width = "w-full",
+  href,
+}: ViewAllProps) => {
   // Tailwindのクラスを動的に生成
-  const alignmentClass = position === 'start' 
-    ? 'items-start' 
-    : position === 'end'
-    ? 'items-end'
-    : 'items-center'; // デフォルトでcenter
+  const alignmentClass =
+    position === "start"
+      ? "items-start"
+      : position === "end"
+        ? "items-end"
+        : "items-center"; // デフォルトでcenter
 
   return (
-    <div className={`mt-8 flex flex-col ${alignmentClass} justify-center`}>
+    <Link
+      href={href}
+      className={`mt-8 flex flex-col ${alignmentClass} justify-center`}
+    >
       <div className={`flex  ${width} flex-col`}>
         <div className={`flex ${width} items-center justify-between `}>
           <p className="font-roboto text-xl font-bold sm:text-2xl">{text}</p>
@@ -27,7 +38,7 @@ const ViewAll = ({ text, position = 'center', width = 'w-full' }: ViewAllProps) 
           <div className="absolute left-0 top-0 h-[3px] w-full animate-slide bg-black"></div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
