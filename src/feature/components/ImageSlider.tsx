@@ -1,5 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react"; // SwiperとSwiperSlideをインポート
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules"; // Swiper 11.x以降は/modulesからモジュールをインポート
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Autoplay,
+} from "swiper/modules"; // Swiper 11.x以降は/modulesからモジュールをインポート
 import "swiper/css"; // Swiperのスタイル
 import "swiper/css/pagination"; // ページネーションのスタイル
 import "swiper/css/navigation"; // ナビゲーションのスタイル
@@ -32,18 +37,43 @@ const ImageSlider = () => {
       projectLink: "https://github.com/SomaTakata/yumemi-coding-test",
       imageSrc: "/population.png",
     },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "NginLink",
+      projectLink: "https://github.com/SomaTakata/ngin-link",
+      imageSrc: "/nginlink.png",
+    },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "DevQuest",
+      projectLink: "https://github.com/SomaTakata/dev-quest",
+      imageSrc: "/devquest.png",
+    },
+    {
+      title: "フロントエンド",
+      year: "2024",
+      projectName: "都道府県人口推移",
+      projectLink: "https://github.com/SomaTakata/yumemi-coding-test",
+      imageSrc: "/population.png",
+    },
   ];
 
   return (
     <div className="relative h-full overflow-x-hidden">
       <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation]} // 使用するモジュールを指定
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]} // 使用するモジュールを指定
         effect={"coverflow"} // カバーフロー効果を適用
         loop={true} // 無限ループ
         centeredSlides={true} // 中央寄せにする
         pagination={{
           clickable: true,
-          el: ".swiper-pagination", // カスタムクラスのページネーションをターゲット
+        }}
+        autoplay={{
+          delay: 2000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
         }}
         navigation={{
           nextEl: ".swiper-button-next",
@@ -54,7 +84,7 @@ const ImageSlider = () => {
           rotate: 0,
           stretch: 5,
           depth: 100,
-          modifier: 8,
+          modifier: 2,
           slideShadows: false,
         }}
         // slidesPerViewはデバイスに応じて変わる
