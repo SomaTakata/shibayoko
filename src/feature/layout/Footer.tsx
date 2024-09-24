@@ -15,12 +15,6 @@ type FooterProps = {
 };
 
 const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
-  const [mode, setMode] = useState<"light" | "dark" | "system">("light");
-
-  const toggleMode = (newMode: "light" | "dark" | "system") => {
-    setMode(newMode);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -50,40 +44,7 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
       </div>
       <div className="hidden lg:flex ">
         {/* モード切り替えトグルスイッチ */}
-        <div className="flex h-[100px] items-center justify-center gap-4 border-r-[3px] border-black px-8">
-          <div className="flex gap-4">
-            <div
-              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
-                mode === "light"
-                  ? "scale-90 bg-yellow-500 text-white"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("light")}
-            >
-              <WbSunnyIcon className="size-8" />
-            </div>
-            <div
-              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
-                mode === "dark"
-                  ? "scale-90 bg-gray-800 text-white"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("dark")}
-            >
-              <DarkModeIcon className="size-8" />
-            </div>
-            <div
-              className={`cursor-pointer rounded-full p-2 transition-all duration-300${
-                mode === "system"
-                  ? "scale-90 bg-blue-500 text-white"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("system")}
-            >
-              <LaptopChromebookIcon className="size-8" />
-            </div>
-          </div>
-        </div>
+        <div className="flex h-[100px] items-center justify-center gap-4 border-r-[3px] border-black px-8"></div>
         {/* Topに戻るボタン */}
         <div className="hidden w-24 items-center justify-center lg:flex">
           <KeyboardArrowUpIcon
@@ -96,40 +57,7 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
       {/* 小画面用のモード切り替えとメニュー */}
       <div className="w-full h-16 flex lg:hidden relative">
         {/* モード切り替えトグルスイッチ */}
-        <div className="w-1/2 border-r-[2px] gap-4 border-black flex items-center justify-center">
-          <div className="flex gap-4">
-            <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === "light"
-                  ? "bg-yellow-500 text-white scale-90"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("light")}
-            >
-              <WbSunnyIcon className="w-8 h-8" />
-            </div>
-            <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === "dark"
-                  ? "bg-gray-800 text-white scale-90"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("dark")}
-            >
-              <DarkModeIcon className="w-8 h-8" />
-            </div>
-            <div
-              className={`cursor-pointer p-2 rounded-full transition-all duration-300 transform ${
-                mode === "system"
-                  ? "bg-blue-500 text-white scale-90"
-                  : "scale-75 hover:scale-100"
-              }`}
-              onClick={() => toggleMode("system")}
-            >
-              <LaptopChromebookIcon className="w-8 h-8" />
-            </div>
-          </div>
-        </div>
+        <div className="w-1/2 border-r-[2px] gap-4 border-black flex items-center justify-center"></div>
 
         {/* メニュー開閉ボタン */}
         <div
