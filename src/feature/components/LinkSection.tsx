@@ -6,12 +6,12 @@ const linkItems = [
   {
     name: "X",
     icon: <XIcon className="size-8 sm:size-16 " />,
-    href: "https://twitter.com",
+    href: "https://twitter.com/soma_takata",
   },
   {
     name: "Github",
     icon: <GitHubIcon className="size-8 sm:size-16 " />,
-    href: "https://github.com",
+    href: "https://github.com/SomaTakata",
   },
   {
     name: "Zenn",
@@ -20,7 +20,7 @@ const linkItems = [
         Zenn
       </span>
     ),
-    href: "https://zenn.dev",
+    href: "https://zenn.dev/soma_takata",
   },
 ];
 

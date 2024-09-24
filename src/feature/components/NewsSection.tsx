@@ -3,14 +3,15 @@ import NewsCard from "./NewsCard";
 
 const newsItems = [
   {
-    date: "2024.7.10",
-    description: "WEBサイトをリニューアル致しました！",
-    imageSrc: "/news.png",
+    date: "2024.7.26",
+    description:
+      "ハウテレビジョンでの3ヶ月のエンジニアインターン体験記投稿しました！",
+    imageSrc: "https://blog.howtelevision.co.jp/entry/2024/07/26/174358",
   },
   {
-    date: "2024.7.11",
-    description: "新機能を追加しました！",
-    imageSrc: "/news.png",
+    date: "2024.9.17",
+    description: "LayerXサマーインターン体験記を投稿しました！",
+    imageSrc: "https://zenn.dev/soma_takata/articles/3a5ad127b57e04",
   },
 ];
 

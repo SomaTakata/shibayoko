@@ -68,10 +68,10 @@ const Header = ({ menuOpen }: HeaderProps) => {
       {/* フッターアイコン */}
       {menuOpen && (
         <div className="flex gap-6 transition-all ease-in-out duration-500 w-full justify-end mt-6 delay-1200">
-          <Link href="https://github.com" aria-label="GitHub">
+          <Link href="https://github.com/SomaTakata" aria-label="GitHub">
             <GitHubIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
-          <Link href="/close" aria-label="Close Menu">
+          <Link href="https://twitter.com/soma_takata" aria-label="Close Menu">
             <XIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
         </div>
@@ -92,10 +92,13 @@ const Header = ({ menuOpen }: HeaderProps) => {
             </Link>
           </nav>
           <div className="flex items-center gap-6">
-            <Link href="https://github.com" aria-label="GitHub">
+            <Link href="https://github.com/SomaTakata" aria-label="GitHub">
               <GitHubIcon className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
-            <Link href="/close" aria-label="Close Menu">
+            <Link
+              href="https://twitter.com/soma_takata"
+              aria-label="Close Menu"
+            >
               <XIcon className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
           </div>

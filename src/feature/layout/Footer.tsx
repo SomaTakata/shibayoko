@@ -40,10 +40,10 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
           <div className="font-roboto">NEWS</div>
         </nav>
         <div className="flex items-center gap-6">
-          <Link href="/ja">
+          <Link href="https://github.com/SomaTakata">
             <GitHubIcon />
           </Link>
-          <Link href="/ja">
+          <Link href="https://twitter.com/soma_takata">
             <XIcon />
           </Link>
         </div>
