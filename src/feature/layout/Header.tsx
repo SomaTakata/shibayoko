@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header = ({ menuOpen }: HeaderProps) => {
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-20 flex items-center border-b-2 border-black bg-white px-10 py-5 lg:border-b-[3px] lg:py-7 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 flex items-center border-b-2 border-black bg-white px-10 py-5 lg:border-b-[3px] lg:py-7 transition-all duration-500 ${
         menuOpen
           ? "h-[calc(100vh-62px)] flex-col justify-center"
           : "h-20 lg:h-[100px] justify-between"
@@ -79,7 +79,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
 
       {/* 通常ヘッダー（大画面のみ表示） */}
       {!menuOpen && (
-        <div className="hidden gap-12 lg:flex">
+        <div className="hidden gap-12 lg:flex ">
           <nav className="flex items-center gap-12 font-bold">
             <Link href="/works" className="font-roboto hover:underline">
               WORK
@@ -92,13 +92,10 @@ const Header = ({ menuOpen }: HeaderProps) => {
             </Link>
           </nav>
           <div className="flex items-center gap-6">
-            <Link href="https://github.com/SomaTakata" aria-label="GitHub">
+            <Link href="https://github.com/SomaTakata">
               <GitHubIcon className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
-            <Link
-              href="https://twitter.com/soma_takata"
-              aria-label="Close Menu"
-            >
+            <Link href="https://twitter.com/soma_takata">
               <XIcon className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
           </div>

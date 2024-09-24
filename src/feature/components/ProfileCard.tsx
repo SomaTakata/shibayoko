@@ -3,7 +3,7 @@ import ViewAll from "./ViewAll"; // ViewAllコンポーネントをインポー�
 
 const ProfileCard = () => {
   return (
-    <div className="mx-auto max-w-sm rounded-xl border-2 border-black bg-white p-10">
+    <div className="mx-auto -z-20 max-w-sm rounded-xl border-2 border-black bg-white p-10">
       {/* イラストの部分 */}
       <div className="mb-4 flex justify-center">
         <div className="relative size-48 overflow-hidden rounded-full border-2 border-black">

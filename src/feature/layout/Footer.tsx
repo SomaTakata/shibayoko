@@ -30,7 +30,7 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
 
   return (
     <footer
-      className={`fixed inset-x-0 bottom-0 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]`}
+      className={`fixed inset-x-0 z-50 bottom-0 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]`}
     >
       {/* 大画面用ナビゲーション */}
       <div className="hidden h-[100px] w-full items-center gap-12 border-r-[3px] border-black px-10 py-5 lg:flex lg:py-10">
@@ -136,7 +136,7 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
           className={`w-1/2 flex items-center justify-center gap-3 cursor-pointer duration-300 bg-transparent relative z-10`}
           onClick={toggleMenu}
         >
-          <span className="relative z-20 flex items-center gap-3">
+          <span className="relative z-50 flex items-center gap-3">
             {menuOpen ? (
               <>
                 <CloseIcon className="w-7 h-7 text-white" />
@@ -154,7 +154,7 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
 
           {/* 背景アニメーションのための before 疑似要素 */}
           <div
-            className={`absolute inset-0 -z-1 overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-black before:transition-transform before:duration-300 before:transform ${
+            className={`absolute inset-0 -z-10 overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-black before:transition-transform before:duration-300 before:transform ${
               menuOpen ? "before:translate-y-0" : "before:-translate-y-full"
             }`}
           ></div>
