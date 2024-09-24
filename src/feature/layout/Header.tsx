@@ -20,7 +20,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
         {/* 名前部分 */}
         <h1
           className={`font-roboto transition-all duration-500 ease-in font-black ${
-            menuOpen ? "text-5xl sm:text-7xl" : "text-3xl"
+            menuOpen ? "text-4xl sm:text-7xl" : "text-3xl"
           }`}
         >
           <Link href="/">SOMA TAKATA</Link>
@@ -69,10 +69,10 @@ const Header = ({ menuOpen }: HeaderProps) => {
       {menuOpen && (
         <div className="flex gap-6 transition-all ease-in-out duration-500 w-full justify-end mt-6 delay-1200">
           <Link href="https://github.com" aria-label="GitHub">
-            <GitHubIcon className="text-black hover:text-gray-700 transition-colors duration-300" />
+            <GitHubIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
           <Link href="/close" aria-label="Close Menu">
-            <XIcon className="text-black hover:text-gray-700 transition-colors duration-300" />
+            <XIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
         </div>
       )}
