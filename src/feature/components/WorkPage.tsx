@@ -25,7 +25,7 @@ const workItems = [
 ];
 
 const WorkPage = () => (
-  <section className="flex z-10 bg-white flex-col gap-6 border-t-2  border-black px-5 py-14 pb-20  sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
+  <section className="flex z-10 h-screen bg-white flex-col gap-6  px-5 py-14 pb-20  sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
     <h2 className="font-roboto text-4xl font-black tracking-widest text-white text-stroke sm:text-5xl">
       WORK
     </h2>
