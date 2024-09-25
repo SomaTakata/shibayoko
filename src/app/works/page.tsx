@@ -33,7 +33,7 @@ const Home = () => {
     });
   };
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col  w-full overflow-hidden  ">
       <Header menuOpen={menuOpen} />
       <WorkPage />
       <div className="flex h-16 w-full border-t-2 border-black lg:hidden">
