@@ -40,7 +40,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
         <nav className="flex flex-col w-full duration-500 ease-in-out transition-all delay-300 items-center justify-center mt-10 text-lg font-bold">
           <Link
             href="/works"
-            className="border-y-2 border-black w-full py-3 flex justify-between items-center transition-all delay-500 hover:bg-gray-100"
+            className="border-y-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100"
             aria-label="作品一覧"
           >
             <span>作品一覧</span>
@@ -48,7 +48,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
           </Link>
           <Link
             href="/profile"
-            className="border-b-2 border-black w-full py-3 flex justify-between items-center transition-all delay-700 hover:bg-gray-100"
+            className="border-b-2 border-black w-full py-3 px-2  flex justify-between items-center transition-all delay-700 hover:bg-gray-100"
             aria-label="プロフィール"
           >
             <span>プロフィール</span>
@@ -56,7 +56,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
           </Link>
           <Link
             href="/news"
-            className="border-b-2 border-black w-full py-3 flex justify-between items-center transition-all delay-900 hover:bg-gray-100"
+            className="border-b-2 border-black w-full py-3 px-2  flex justify-between items-center transition-all delay-900 hover:bg-gray-100"
             aria-label="お知らせ"
           >
             <span>お知らせ</span>
