@@ -1,16 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import ImageSection from "@/feature/components/ImageSection";
-import ImageSlider from "@/feature/components/ImageSlider";
-import LinkSection from "@/feature/components/LinkSection";
-import MarqueeText from "@/feature/components/MarqueeText";
-import NewsSection from "@/feature/components/NewsSection";
-import ProfileSection from "@/feature/components/ProfileSection";
-import WorkSection from "@/feature/components/WorkSection";
 import Footer from "@/feature/layout/Footer";
 import Header from "@/feature/layout/Header";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
+import ProfilePage from "@/feature/components/ProfilePage";
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,23 +32,10 @@ const Home = () => {
       behavior: "smooth",
     });
   };
-
   return (
     <div className="flex flex-col ">
       <Header menuOpen={menuOpen} />
-      <MarqueeText />
-      <section>
-        <div className="flex items-center justify-center px-14 py-20">
-          <ImageSlider />
-        </div>
-      </section>
-
-      <WorkSection />
-      <ProfileSection />
-      <NewsSection />
-      <LinkSection />
-      <ImageSection />
-
+      <ProfilePage />
       <div className="flex h-16 w-full border-t-2 border-black lg:hidden">
         <div className="w-full justify-between border-r-2 border-black"></div>
         <div className="flex w-24 items-center justify-center">
@@ -64,7 +45,6 @@ const Home = () => {
           />
         </div>
       </div>
-
       <Footer menuOpen={menuOpen} toggleMenu={toggleMenu} />
     </div>
   );
