@@ -1,13 +1,11 @@
-"use client";
-import ClientLayout from "@/client/ClientLayout";
-import ProfilePage from "@/feature/components/ProfilePage";
+import ProfilePage from "@/feature/page/ProfilePage";
+
+export const metadata = {
+  title: "PROFILE",
+};
 
 const Home = () => {
-  return (
-    <ClientLayout>
-      <ProfilePage />
-    </ClientLayout>
-  );
+  return <ProfilePage />;
 };
 
 export default Home;

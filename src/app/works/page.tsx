@@ -1,13 +1,11 @@
-"use client";
-import WorkPage from "@/feature/components/WorkPage";
-import ClientLayout from "@/client/ClientLayout";
+import WorkPage from "@/feature/page/WorkPage";
+
+export const metadata = {
+  title: "WORK",
+};
 
 const Home = () => {
-  return (
-    <ClientLayout>
-      <WorkPage />
-    </ClientLayout>
-  );
+  return <WorkPage />;
 };
 
 export default Home;
