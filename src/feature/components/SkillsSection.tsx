@@ -26,7 +26,7 @@ const skills = [
   },
   {
     name: "Next.js",
-    icon: <SiNextdotjs className="text-6xl lg:text-7xl text-black " />,
+    icon: <SiNextdotjs className="text-6xl lg:text-7xl text-black" />,
   },
 ];
 
@@ -38,13 +38,13 @@ const SkillsSection = () => {
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skills.map((skill, index) => (
+        {skills.map((skill) => (
           <div
-            key={index}
+            key={skill.name}
             className="flex flex-col items-center justify-center p-4 bg-white border-2 border-black rounded-lg"
           >
             {skill.icon}
-            <p className="mt-2 text-lg font-semibold text-gray-700 ">
+            <p className="mt-2 text-lg font-semibold text-gray-700">
               {skill.name}
             </p>
           </div>

@@ -19,20 +19,20 @@ const WorkCard = ({
   <Link href={projectLink}>
     <div className="flex flex-col gap-2">
       <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10">
-        <div className="relative size-full">
+        <div className="relative w-full h-full">
           <Image
             src={imageSrc}
-            alt={`${title} - ${projectName}`}
+            alt={`${title} project - ${projectName}`}
             fill
             className="object-contain"
           />
         </div>
       </div>
 
-      <div className="mt-1 text-sm font-semibold">
+      <p className="mt-1 text-sm font-semibold">
         {title} | {year}
-      </div>
-      <div className="text-sm font-semibold">{projectName}</div>
+      </p>
+      <p className="text-sm font-semibold">{projectName}</p>
     </div>
   </Link>
 );

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Footer from "@/feature/layout/Footer";
 import Header from "@/feature/layout/Header";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 export default function ClientLayout({
   children,
@@ -21,7 +21,7 @@ export default function ClientLayout({
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("re", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -44,8 +44,8 @@ export default function ClientLayout({
       <div className="flex h-16 w-full border-t-2 border-black lg:hidden">
         <div className="w-full justify-between border-r-2 border-black"></div>
         <div className="flex w-24 items-center justify-center">
-          <KeyboardArrowUpIcon
-            className="size-10 cursor-pointer transition-all duration-300 hover:scale-125"
+          <MdOutlineKeyboardArrowUp
+            className="h-10 w-10 cursor-pointer transition-all duration-300 hover:scale-125"
             onClick={scrollToTop}
           />
         </div>

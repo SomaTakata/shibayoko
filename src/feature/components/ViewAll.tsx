@@ -1,4 +1,4 @@
-import EastIcon from "@mui/icons-material/East";
+import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 
 interface ViewAllProps {
@@ -26,10 +26,10 @@ const ViewAll = ({
       href={href}
       className={`mt-8 flex flex-col ${alignmentClass} justify-center`}
     >
-      <div className={`flex  ${width} flex-col`}>
-        <div className={`flex ${width} items-center justify-between `}>
+      <div className={`flex ${width} flex-col`}>
+        <div className="flex w-full items-center justify-between">
           <p className="font-roboto text-xl font-bold sm:text-2xl">{text}</p>
-          <EastIcon className="size-8" />
+          <FaArrowRight className="h-8 w-8" />
         </div>
 
         <div className="relative mt-2 h-[3px] w-full overflow-hidden bg-gray-300">

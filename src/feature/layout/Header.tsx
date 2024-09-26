@@ -1,6 +1,6 @@
 import Link from "next/link";
-import XIcon from "@mui/icons-material/X";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
 
 // Propsの型定義
 type HeaderProps = {
@@ -23,7 +23,9 @@ const Header = ({ menuOpen }: HeaderProps) => {
             menuOpen ? "text-4xl sm:text-7xl" : "text-3xl"
           }`}
         >
-          <Link href="/">SOMA TAKATA</Link>
+          <Link href="/" aria-label="Home">
+            SOMA TAKATA
+          </Link>
         </h1>
 
         {/* 説明文（大画面のみ表示） */}
@@ -41,23 +43,23 @@ const Header = ({ menuOpen }: HeaderProps) => {
           <Link
             href="/works"
             className="border-y-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100"
-            aria-label="作品一覧"
+            aria-label="Works"
           >
             <span>作品一覧</span>
             <span>WORK</span>
           </Link>
           <Link
             href="/profile"
-            className="border-b-2 border-black w-full py-3 px-2  flex justify-between items-center transition-all delay-700 hover:bg-gray-100"
-            aria-label="プロフィール"
+            className="border-b-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-700 hover:bg-gray-100"
+            aria-label="Profile"
           >
             <span>プロフィール</span>
             <span>PROFILE</span>
           </Link>
           <Link
             href="/news"
-            className="border-b-2 border-black w-full py-3 px-2  flex justify-between items-center transition-all delay-900 hover:bg-gray-100"
-            aria-label="お知らせ"
+            className="border-b-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-900 hover:bg-gray-100"
+            aria-label="News"
           >
             <span>お知らせ</span>
             <span>NEWS</span>
@@ -69,34 +71,46 @@ const Header = ({ menuOpen }: HeaderProps) => {
       {menuOpen && (
         <div className="flex gap-6 transition-all ease-in-out duration-500 w-full justify-end mt-6 delay-1200">
           <Link href="https://github.com/SomaTakata" aria-label="GitHub">
-            <GitHubIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
+            <IoLogoGithub className="text-black h-8 w-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
-          <Link href="https://twitter.com/soma_takata" aria-label="Close Menu">
-            <XIcon className="text-black size-8 hover:text-gray-700 transition-colors duration-300" />
+          <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
+            <FaXTwitter className="text-black h-8 w-8 hover:text-gray-700 transition-colors duration-300" />
           </Link>
         </div>
       )}
 
       {/* 通常ヘッダー（大画面のみ表示） */}
       {!menuOpen && (
-        <div className="hidden gap-12 lg:flex ">
+        <div className="hidden gap-12 lg:flex">
           <nav className="flex items-center gap-12 font-bold">
-            <Link href="/works" className="font-roboto hover:underline">
+            <Link
+              href="/works"
+              className="font-roboto hover:underline"
+              aria-label="Works"
+            >
               WORK
             </Link>
-            <Link href="/profile" className="font-roboto hover:underline">
+            <Link
+              href="/profile"
+              className="font-roboto hover:underline"
+              aria-label="Profile"
+            >
               PROFILE
             </Link>
-            <Link href="/news" className="font-roboto hover:underline">
+            <Link
+              href="/news"
+              className="font-roboto hover:underline"
+              aria-label="News"
+            >
               NEWS
             </Link>
           </nav>
           <div className="flex items-center gap-6">
-            <Link href="https://github.com/SomaTakata">
-              <GitHubIcon className="hover:text-gray-700 transition-colors duration-300" />
+            <Link href="https://github.com/SomaTakata" aria-label="GitHub">
+              <IoLogoGithub className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
-            <Link href="https://twitter.com/soma_takata">
-              <XIcon className="hover:text-gray-700 transition-colors duration-300" />
+            <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
+              <FaXTwitter className="hover:text-gray-700 transition-colors duration-300" />
             </Link>
           </div>
         </div>

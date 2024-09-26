@@ -3,12 +3,12 @@ import ViewAll from "./ViewAll";
 
 const ProfileCard = () => {
   return (
-    <div className="mx-auto -z-20 max-w-sm rounded-xl border-2 border-black bg-white p-10">
+    <div className="mx-auto max-w-sm rounded-xl border-2 border-black bg-white p-10">
       <div className="mb-4 flex justify-center">
-        <div className="relative size-48 overflow-hidden rounded-full border-2 border-black">
+        <div className="relative w-48 h-48 overflow-hidden rounded-full border-2 border-black">
           <Image
             src="/avatar.png"
-            alt="Profile Image"
+            alt="Soma Takata's profile image"
             fill
             className="object-contain"
           />

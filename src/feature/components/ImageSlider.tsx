@@ -61,7 +61,7 @@ const ImageSlider = () => {
   return (
     <div className="relative h-full overflow-x-hidden">
       <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]} // 使用するモジュールを指定
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
         effect={"coverflow"}
         loop={true}
         centeredSlides={true}
@@ -104,7 +104,7 @@ const ImageSlider = () => {
               href={slide.projectLink}
               className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10"
             >
-              <div className="relative size-full">
+              <div className="relative w-full h-full">
                 <Image
                   src={slide.imageSrc}
                   alt={`${slide.title} - ${slide.projectName}`}
@@ -113,7 +113,7 @@ const ImageSlider = () => {
                 />
               </div>
             </Link>
-            <div className="w-full  flex justify-center text-xl font-bold pb-12 pt-4">
+            <div className="w-full flex justify-center text-xl font-bold pb-12 pt-4">
               <p>{slide.projectName}</p>
             </div>
           </SwiperSlide>
@@ -121,11 +121,17 @@ const ImageSlider = () => {
       </Swiper>
 
       <div className="absolute inset-y-0 left-0 z-10 hidden items-center lg:flex">
-        <button className="swiper-button-prev transition-all duration-300 hover:scale-125"></button>
+        <button
+          className="swiper-button-prev transition-all duration-300 hover:scale-125"
+          aria-label="Previous slide"
+        ></button>
       </div>
 
-      <div className="absolute inset-y-0 right-0 z-10  hidden items-center lg:flex">
-        <button className="swiper-button-next transition-all duration-300 hover:scale-125"></button>
+      <div className="absolute inset-y-0 right-0 z-10 hidden items-center lg:flex">
+        <button
+          className="swiper-button-next transition-all duration-300 hover:scale-125"
+          aria-label="Next slide"
+        ></button>
       </div>
 
       <div className="swiper-pagination absolute bottom-4 z-10 flex justify-center lg:flex"></div>
