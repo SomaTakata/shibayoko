@@ -71,7 +71,7 @@ const Header = ({ menuOpen }: HeaderProps) => {
       {menuOpen && (
         <div className="flex gap-6 transition-all ease-in-out duration-500 w-full justify-end mt-6 delay-1200">
           <Link href="https://github.com/SomaTakata" aria-label="GitHub">
-            <IoLogoGithub className="text-black h-8 w-8 hover:text-gray-700 transition-colors duration-300" />
+            <IoLogoGithub className="text-black h-8 w-8  hover:text-gray-700 transition-colors duration-300" />
           </Link>
           <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
             <FaXTwitter className="text-black h-8 w-8 hover:text-gray-700 transition-colors duration-300" />
@@ -107,10 +107,10 @@ const Header = ({ menuOpen }: HeaderProps) => {
           </nav>
           <div className="flex items-center gap-6">
             <Link href="https://github.com/SomaTakata" aria-label="GitHub">
-              <IoLogoGithub className="hover:text-gray-700 transition-colors duration-300" />
+              <IoLogoGithub className="hover:text-gray-700 transition-colors duration-300 h-7 w-7" />
             </Link>
             <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
-              <FaXTwitter className="hover:text-gray-700 transition-colors duration-300" />
+              <FaXTwitter className="hover:text-gray-700 transition-colors duration-300 h-7 w-7" />
             </Link>
           </div>
         </div>

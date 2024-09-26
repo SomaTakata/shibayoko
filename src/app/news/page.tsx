@@ -1,11 +1,9 @@
-"use client";
-import NewsPage from "@/feature/components/NewsPage";
-import ClientLayout from "@/client/ClientLayout";
+import NewsPage from "@/feature/page/NewsPage";
+
+export const metadata = {
+  title: "NEWS",
+};
 
 export default function Home() {
-  return (
-    <ClientLayout>
-      <NewsPage />
-    </ClientLayout>
-  );
+  return <NewsPage />;
 }
