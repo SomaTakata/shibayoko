@@ -34,10 +34,10 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
         </nav>
         <div className="flex items-center gap-6">
           <Link href="https://github.com/SomaTakata" aria-label="GitHub">
-            <IoLogoGithub />
+            <IoLogoGithub className="h-7 w-7" />
           </Link>
           <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
-            <FaXTwitter />
+            <FaXTwitter className="h-7 w-7" />
           </Link>
         </div>
       </div>
