@@ -6,7 +6,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 const skills = [
   {
     name: "TypeScript",
-    icon: <SiTypescript className="text-5xl lg:text-6xl text-blue-600" />,
+    icon: <SiTypescript className="text-6xl lg:text-7xl text-blue-600" />,
   },
   {
     name: "Golang",
@@ -26,7 +26,7 @@ const skills = [
   },
   {
     name: "Next.js",
-    icon: <SiNextdotjs className="text-6xl text-black " />,
+    icon: <SiNextdotjs className="text-6xl lg:text-7xl text-black " />,
   },
 ];
 
