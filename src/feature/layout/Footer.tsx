@@ -3,6 +3,7 @@ import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 type FooterProps = {
   menuOpen: boolean;
@@ -17,18 +18,36 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
     });
   };
 
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
+
   return (
     <footer className="fixed inset-x-0 bottom-0 z-50 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]">
       {/* Desktop Navigation */}
       <div className="hidden h-[100px] w-full items-center gap-12 border-r-[3px] border-black px-10 py-5 lg:flex lg:py-10">
         <nav className="flex items-center gap-12 font-bold">
-          <Link href="/works" className="font-roboto">
+          <Link
+            href="/works"
+            className={`font-roboto hover:underline ${
+              isActive("/works") ? "border-b-2 border-black pb-0.5" : ""
+            }`}
+          >
             WORK
           </Link>
-          <Link href="/profile" className="font-roboto">
+          <Link
+            href="/profile"
+            className={`font-roboto hover:underline ${
+              isActive("/profile") ? "border-b-2 border-black pb-0.5" : ""
+            }`}
+          >
             PROFILE
           </Link>
-          <Link href="/news" className="font-roboto">
+          <Link
+            href="/news"
+            className={`font-roboto hover:underline ${
+              isActive("/news") ? "border-b-2 border-black pb-0.5" : ""
+            }`}
+          >
             NEWS
           </Link>
         </nav>

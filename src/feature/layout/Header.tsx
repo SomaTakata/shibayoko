@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
+import { usePathname } from "next/navigation";
 
 // Propsの型定義
 type HeaderProps = {
@@ -8,6 +9,8 @@ type HeaderProps = {
 };
 
 const Header = ({ menuOpen }: HeaderProps) => {
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 flex items-center border-b-2 border-black bg-white px-10 py-5 lg:border-b-[3px] lg:py-7 transition-all duration-500 ${
@@ -42,7 +45,9 @@ const Header = ({ menuOpen }: HeaderProps) => {
         <nav className="flex flex-col w-full duration-500 ease-in-out transition-all delay-300 items-center justify-center mt-10 text-lg font-bold">
           <Link
             href="/works"
-            className="border-y-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100"
+            className={`border-t-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100 ${
+              isActive("/works") ? "bg-gray-200" : ""
+            }`}
             aria-label="Works"
           >
             <span>作品一覧</span>
@@ -50,7 +55,9 @@ const Header = ({ menuOpen }: HeaderProps) => {
           </Link>
           <Link
             href="/profile"
-            className="border-b-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-700 hover:bg-gray-100"
+            className={`border-y-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100 ${
+              isActive("/profile") ? "bg-gray-200" : ""
+            }`}
             aria-label="Profile"
           >
             <span>プロフィール</span>
@@ -58,7 +65,9 @@ const Header = ({ menuOpen }: HeaderProps) => {
           </Link>
           <Link
             href="/news"
-            className="border-b-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-900 hover:bg-gray-100"
+            className={`border-b-2 border-black w-full py-3 px-2 flex justify-between items-center transition-all delay-500 hover:bg-gray-100 ${
+              isActive("/news") ? "bg-gray-200" : ""
+            }`}
             aria-label="News"
           >
             <span>お知らせ</span>
@@ -85,21 +94,27 @@ const Header = ({ menuOpen }: HeaderProps) => {
           <nav className="flex items-center gap-12 font-bold">
             <Link
               href="/works"
-              className="font-roboto hover:underline"
+              className={`font-roboto hover:underline ${
+                isActive("/works") ? "border-b-2 border-black pb-0.5" : ""
+              }`}
               aria-label="Works"
             >
               WORK
             </Link>
             <Link
               href="/profile"
-              className="font-roboto hover:underline"
+              className={`font-roboto hover:underline ${
+                isActive("/profile") ? "border-b-2 border-black pb-0.5" : ""
+              }`}
               aria-label="Profile"
             >
               PROFILE
             </Link>
             <Link
               href="/news"
-              className="font-roboto hover:underline"
+              className={`font-roboto hover:underline ${
+                isActive("/news") ? "border-b-2 border-black pb-0.5" : ""
+              }`}
               aria-label="News"
             >
               NEWS
