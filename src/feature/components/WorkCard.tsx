@@ -18,13 +18,14 @@ const WorkCard = ({
 }: WorkCardProps) => (
   <Link href={projectLink}>
     <div className="flex flex-col gap-2">
-      <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10">
-        <div className="relative w-full h-full">
+      <div className="flex items-center justify-center rounded-lg border-2 border-black bg-white p-10">
+        <div className="relative w-full aspect-square">
           <Image
             src={imageSrc}
             alt={`${title} project - ${projectName}`}
             fill
-            className="object-contain"
+            style={{ objectFit: "contain" }}
+            className="rounded-lg"
           />
         </div>
       </div>
