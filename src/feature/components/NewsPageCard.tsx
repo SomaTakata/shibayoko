@@ -11,11 +11,12 @@ interface NewsCardProps {
 const NewsPageCard = ({ date, description, imageSrc, href }: NewsCardProps) => (
   <Link
     href={href}
+    target="_blank"
     className="flex flex-col gap-2"
     aria-label={`Read more about ${description}`}
   >
-    <div className="flex aspect-video items-center justify-center rounded-lg border-2 border-black bg-white p-10">
-      <div className="relative w-full h-full">
+    <div className="flex items-center justify-center rounded-lg border-2 border-black bg-white p-10">
+      <div className="relative w-full aspect-video">
         <Image
           src={imageSrc}
           alt={`Image for ${description}`}

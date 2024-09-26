@@ -16,7 +16,7 @@ const WorkCard = ({
   imageSrc,
   projectLink,
 }: WorkCardProps) => (
-  <Link href={projectLink}>
+  <Link href={projectLink} target="_blank">
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-center rounded-lg border-2 border-black bg-white p-10">
         <div className="relative w-full aspect-square">

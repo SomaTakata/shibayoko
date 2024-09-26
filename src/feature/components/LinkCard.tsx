@@ -7,7 +7,7 @@ interface LinkCardProps {
 }
 
 const LinkCard: React.FC<LinkCardProps> = ({ icon, href, label }) => (
-  <Link href={href} aria-label={label}>
+  <Link href={href} aria-label={label} target="_blank">
     <div
       className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-lg border-2 border-black bg-white transition hover:bg-gray-100 sm:gap-2"
       role="button"

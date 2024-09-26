@@ -102,6 +102,7 @@ const ImageSlider = () => {
           <SwiperSlide key={index}>
             <Link
               href={slide.projectLink}
+              target="_blank"
               className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10"
             >
               <div className="relative w-full h-full">

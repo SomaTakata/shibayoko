@@ -28,7 +28,11 @@ const NewsCard = ({ date, description, imageSrc, href }: NewsCardProps) => (
         </p>
       </div>
     </div>
-    <Link href={href} aria-label={`Read more about ${description}`}>
+    <Link
+      target="_blank"
+      href={href}
+      aria-label={`Read more about ${description}`}
+    >
       <button className="items-center justify-center rounded-full border-2 border-black p-2 lg:p-3">
         <FaArrowRight className="h-5 w-6" />
       </button>
