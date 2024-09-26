@@ -17,15 +17,15 @@ const newsItems = [
 ];
 
 const NewsPage = () => (
-  <section className="flex min-h-screen  bg-white flex-col gap-6  px-5 py-14 pb-20  sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
+  <section className="flex min-h-screen w-full flex-col gap-6 bg-white px-5 py-14 pb-20 sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
     <h2 className="font-roboto text-4xl font-black tracking-widest text-white text-stroke sm:text-5xl">
       NEWS
     </h2>
 
     <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
-      {newsItems.map((news, index) => (
+      {newsItems.map((news) => (
         <NewsPageCard
-          key={index}
+          key={news.href}
           date={news.date}
           description={news.description}
           imageSrc={news.imageSrc}

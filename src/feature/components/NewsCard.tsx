@@ -1,4 +1,4 @@
-import EastIcon from "@mui/icons-material/East"; // For the arrow icon
+import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,14 +10,14 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ date, description, imageSrc, href }: NewsCardProps) => (
-  <div className="flex items-center justify-between border-b-2 gap-4  border-black py-4 md:py-6 lg:border-b-[3px]">
+  <div className="flex items-center justify-between border-b-2 gap-4 border-black py-4 md:py-6 lg:border-b-[3px]">
     <div className="flex items-center gap-6 lg:gap-12">
       <p className="hidden text-lg font-bold md:flex">{date}</p>
       <Image
         height={80}
         width={150}
         src={imageSrc}
-        alt="News"
+        alt={`News about ${description}`}
         className="rounded-lg border-2 border-black"
       />
 
@@ -28,9 +28,13 @@ const NewsCard = ({ date, description, imageSrc, href }: NewsCardProps) => (
         </p>
       </div>
     </div>
-    <Link href={href}>
+    <Link
+      target="_blank"
+      href={href}
+      aria-label={`Read more about ${description}`}
+    >
       <button className="items-center justify-center rounded-full border-2 border-black p-2 lg:p-3">
-        <EastIcon className="h-5 w-6" />
+        <FaArrowRight className="h-5 w-6" />
       </button>
     </Link>
   </div>

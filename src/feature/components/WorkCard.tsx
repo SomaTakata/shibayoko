@@ -16,25 +16,24 @@ const WorkCard = ({
   imageSrc,
   projectLink,
 }: WorkCardProps) => (
-  <Link href={projectLink}>
+  <Link href={projectLink} target="_blank">
     <div className="flex flex-col gap-2">
-      {/* カードの画像部分 */}
-      <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10">
-        <div className="relative size-full">
+      <div className="flex items-center justify-center rounded-lg border-2 border-black bg-white p-10">
+        <div className="relative w-full aspect-square">
           <Image
             src={imageSrc}
-            alt={`${title} - ${projectName}`}
+            alt={`${title} project - ${projectName}`}
             fill
-            className="object-contain"
+            style={{ objectFit: "contain" }}
+            className="rounded-lg"
           />
         </div>
       </div>
 
-      {/* テキスト部分 */}
-      <div className="mt-1 text-sm font-semibold">
+      <p className="mt-1 text-sm font-semibold">
         {title} | {year}
-      </div>
-      <div className="text-sm font-semibold">{projectName}</div>
+      </p>
+      <p className="text-sm font-semibold">{projectName}</p>
     </div>
   </Link>
 );
