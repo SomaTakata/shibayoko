@@ -1,9 +1,8 @@
 import Link from "next/link";
-import XIcon from "@mui/icons-material/X";
-import CloseIcon from "@mui/icons-material/Close";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import MenuIcon from "@mui/icons-material/Menu";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
+import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 type FooterProps = {
   menuOpen: boolean;
@@ -19,10 +18,8 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
   };
 
   return (
-    <footer
-      className={`fixed inset-x-0 z-50 bottom-0 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]`}
-    >
-      {/* 大画面用ナビゲーション */}
+    <footer className="fixed inset-x-0 bottom-0 z-50 flex h-16 items-center justify-between border-t-2 border-black bg-white lg:relative lg:h-[100px] lg:border-t-[3px]">
+      {/* Desktop Navigation */}
       <div className="hidden h-[100px] w-full items-center gap-12 border-r-[3px] border-black px-10 py-5 lg:flex lg:py-10">
         <nav className="flex items-center gap-12 font-bold">
           <Link href="/works" className="font-roboto">
@@ -36,55 +33,53 @@ const Footer = ({ menuOpen, toggleMenu }: FooterProps) => {
           </Link>
         </nav>
         <div className="flex items-center gap-6">
-          <Link href="https://github.com/SomaTakata">
-            <GitHubIcon />
+          <Link href="https://github.com/SomaTakata" aria-label="GitHub">
+            <IoLogoGithub />
           </Link>
-          <Link href="https://twitter.com/soma_takata">
-            <XIcon />
+          <Link href="https://twitter.com/soma_takata" aria-label="Twitter">
+            <FaXTwitter />
           </Link>
         </div>
       </div>
-      <div className="hidden lg:flex ">
-        {/* モード切り替えトグルスイッチ */}
+
+      {/* Scroll to Top Button */}
+      <div className="hidden lg:flex">
         <div className="flex h-[100px] items-center justify-center gap-4 border-r-[3px] border-black px-8"></div>
-        {/* Topに戻るボタン */}
-        <div className="hidden w-24 items-center justify-center lg:flex">
-          <KeyboardArrowUpIcon
-            className="size-10 cursor-pointer transition-all duration-300 hover:scale-125"
+        <div className="w-24 flex items-center justify-center">
+          <MdOutlineKeyboardArrowUp
+            className="h-10 w-10 cursor-pointer transition-all duration-300 hover:scale-125"
             onClick={scrollToTop}
+            aria-label="Scroll to top"
           />
         </div>
       </div>
 
-      {/* 小画面用のモード切り替えとメニュー */}
-      <div className="w-full h-16 flex lg:hidden relative">
-        {/* モード切り替えトグルスイッチ */}
-        <div className="w-1/2 border-r-[2px] gap-4 border-black flex items-center justify-center"></div>
-
-        {/* メニュー開閉ボタン */}
+      {/* Mobile Menu */}
+      <div className="relative flex w-full h-16 lg:hidden">
+        <div className="w-1/2 border-r-2 border-black flex items-center justify-center"></div>
         <div
-          className={`w-1/2 flex items-center justify-center gap-3 cursor-pointer duration-300 bg-transparent relative z-10`}
+          className={`relative z-10 flex w-1/2 items-center justify-center gap-3 cursor-pointer duration-300 bg-transparent`}
           onClick={toggleMenu}
         >
           <span className="relative z-50 flex items-center gap-3">
             {menuOpen ? (
               <>
-                <CloseIcon className="w-7 h-7 text-white" />
+                <IoMdClose className="h-7 w-7 text-white" />
                 <p className="font-roboto text-lg font-bold text-white">
                   CLOSE
                 </p>
               </>
             ) : (
               <>
-                <MenuIcon className="w-7 h-7 text-black" />
+                <IoMdMenu className="h-7 w-7 text-black" />
                 <p className="font-roboto text-lg font-bold text-black">MENU</p>
               </>
             )}
           </span>
 
-          {/* 背景アニメーションのための before 疑似要素 */}
+          {/* Background Animation */}
           <div
-            className={`absolute inset-0 -z-10 overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-black before:transition-transform before:duration-300 before:transform ${
+            className={`absolute inset-0 -z-10 overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-black before:transition-transform before:duration-300 ${
               menuOpen ? "before:translate-y-0" : "before:-translate-y-full"
             }`}
           ></div>

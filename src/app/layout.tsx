@@ -1,6 +1,6 @@
 import { Roboto, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import { Metadata } from "next";
 
 const roboto = Roboto({
   subsets: ["latin"],
