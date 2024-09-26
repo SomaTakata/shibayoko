@@ -1,6 +1,7 @@
 import { Roboto, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import { getURL } from "@/lib/utils";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ const notoJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getURL()),
   title: {
     default: "Soma Takata",
     template: `%s | Soma Takata`,
