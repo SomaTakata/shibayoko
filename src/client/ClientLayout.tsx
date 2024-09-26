@@ -1,4 +1,4 @@
-"use client"; // クライアントサイドで動く部分
+"use client";
 
 import { useEffect, useState } from "react";
 import Footer from "@/feature/layout/Footer";
