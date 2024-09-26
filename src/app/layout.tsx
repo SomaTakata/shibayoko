@@ -15,8 +15,11 @@ const notoJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Soma Takata",
-  description: "Hi there! I'm Soma Takata, a software engineer.",
+  title: {
+    default: "Soma Takata",
+    template: `%s | Soma Takata`,
+  },
+  description: "これは、SomaTakataのポートフォリオサイトです。",
 };
 
 export default function RootLayout({
