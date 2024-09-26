@@ -4,8 +4,8 @@ import Link from "next/link";
 interface ViewAllProps {
   text: string;
   href: string;
-  position?: "start" | "center" | "end"; // justify-start, justify-center, justify-end のいずれかを選択
-  width?: string; // 幅を調整するための新しいプロップ
+  position?: "start" | "center" | "end";
+  width?: string;
 }
 
 const ViewAll = ({
@@ -14,13 +14,12 @@ const ViewAll = ({
   width = "w-full",
   href,
 }: ViewAllProps) => {
-  // Tailwindのクラスを動的に生成
   const alignmentClass =
     position === "start"
       ? "items-start"
       : position === "end"
         ? "items-end"
-        : "items-center"; // デフォルトでcenter
+        : "items-center";
 
   return (
     <Link
@@ -33,7 +32,6 @@ const ViewAll = ({
           <EastIcon className="size-8" />
         </div>
 
-        {/* アニメーション付きのボーダー */}
         <div className="relative mt-2 h-[3px] w-full overflow-hidden bg-gray-300">
           <div className="absolute left-0 top-0 h-[3px] w-full animate-slide bg-black"></div>
         </div>

@@ -1,10 +1,9 @@
 import Image from "next/image";
-import ViewAll from "./ViewAll"; // ViewAllコンポーネントをインポート
+import ViewAll from "./ViewAll";
 
 const ProfileCard = () => {
   return (
     <div className="mx-auto -z-20 max-w-sm rounded-xl border-2 border-black bg-white p-10">
-      {/* イラストの部分 */}
       <div className="mb-4 flex justify-center">
         <div className="relative size-48 overflow-hidden rounded-full border-2 border-black">
           <Image
@@ -16,7 +15,6 @@ const ProfileCard = () => {
         </div>
       </div>
 
-      {/* プロフィール情報 */}
       <div className="text-center">
         <h2 className="mt-3 font-roboto text-4xl font-bold tracking-widest text-white text-stroke-1">
           PROFILE

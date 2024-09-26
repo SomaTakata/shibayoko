@@ -3,13 +3,12 @@ import SkillsSection from "./SkillsSection ";
 import TimelineSection from "./TimelineSection";
 
 const ProfilePage = () => (
-  <section className="flex z-10   bg-white flex-col gap-6  px-5 py-14 pb-20  sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
+  <section className="flex z-10 w-full  bg-white flex-col gap-6  px-5 py-14 pb-20  sm:gap-12 sm:px-10 md:px-14 md:py-32 lg:gap-16 lg:border-t-[3px]">
     <h2 className="font-roboto text-4xl font-black tracking-widest text-white text-stroke sm:text-5xl">
       PROFILE
     </h2>
 
     <div className="rounded-xl border-2 border-black bg-white p-10">
-      {/* イラストの部分 */}
       <div className="mb-4 flex justify-center">
         <div className="relative size-48 overflow-hidden rounded-full border-2 border-black">
           <Image
@@ -21,7 +20,6 @@ const ProfilePage = () => (
         </div>
       </div>
 
-      {/* プロフィール情報 */}
       <div className="text-center">
         <p className="mt-3 font-roboto text-sm font-bold text-black">
           Web Engineer

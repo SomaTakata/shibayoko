@@ -30,7 +30,6 @@ const ProfileSection = () => {
         cardElement.style.transform = `translateY(${translateY}px) rotate(${rotate}deg)`;
         cardElement.style.opacity = "1"; // 徐々に表示される
       } else {
-        // 最初の位置と非表示状態
         cardElement.style.transform = "translateY(-400px) rotate(-15deg)"; // 初期は左に傾いて非表示
         cardElement.style.opacity = "0";
       }
@@ -43,7 +42,7 @@ const ProfileSection = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden">
+    <section className="w-full overflow-x-hidden">
       <div className="flex h-[750px] items-center justify-center bg-gray-100">
         <div
           ref={cardRef}

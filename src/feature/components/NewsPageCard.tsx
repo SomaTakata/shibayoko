@@ -11,7 +11,6 @@ interface NewsCardProps {
 const NewsPageCard = ({ date, description, imageSrc, href }: NewsCardProps) => (
   <Link href={href}>
     <div className="flex flex-col gap-2">
-      {/* カードの画像部分 */}
       <div className="flex aspect-video items-center justify-center rounded-lg border-2 border-black bg-white p-10">
         <div className="relative size-full">
           <Image

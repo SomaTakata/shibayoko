@@ -19,7 +19,7 @@ const newsItems = [
 
 const NewsSection = () => {
   return (
-    <section className="flex w-full overflow-hidden  z-10 bg-white flex-col gap-6 border-b-2  border-black px-5 py-14 pb-20   sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16 lg:border-b-[3px]">
+    <section className="flex w-full  z-10 bg-white flex-col gap-6 border-b-2  border-black px-5 py-14 pb-20   sm:gap-12 sm:px-10 sm:py-14 md:px-14 md:py-32 lg:gap-16 lg:border-b-[3px]">
       <h2 className="font-roboto text-4xl font-black tracking-widest text-white text-stroke sm:text-5xl">
         NEWS
       </h2>

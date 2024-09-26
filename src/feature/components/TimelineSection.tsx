@@ -37,14 +37,11 @@ const TimelineSection = () => (
       これまでの経歴
     </h2>
     <div className="relative w-fit max-w-xl">
-      {/* Timeline線 */}
       <div className="absolute w-0.5 h-full bg-gray-300 left-4"></div>
 
-      {/* Timeline items */}
       {timelineData.map((item, index) => (
         <div key={index} className="mb-10 flex items-center">
           <div className="relative">
-            {/* 丸のアイコン */}
             <div className="w-3.5 h-3.5 bg-black rounded-full absolute left-2.5 -top-1"></div>
           </div>
           <div className="ml-10">

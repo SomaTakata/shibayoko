@@ -26,7 +26,7 @@ const skills = [
   },
   {
     name: "Next.js",
-    icon: <SiNextdotjs className="text-6xl text-black dark:text-white" />,
+    icon: <SiNextdotjs className="text-6xl text-black " />,
   },
 ];
 
@@ -44,7 +44,7 @@ const SkillsSection = () => {
             className="flex flex-col items-center justify-center p-4 bg-white border-2 border-black rounded-lg"
           >
             {skill.icon}
-            <p className="mt-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
+            <p className="mt-2 text-lg font-semibold text-gray-700 ">
               {skill.name}
             </p>
           </div>

@@ -18,7 +18,6 @@ const WorkCard = ({
 }: WorkCardProps) => (
   <Link href={projectLink}>
     <div className="flex flex-col gap-2">
-      {/* カードの画像部分 */}
       <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-black bg-white p-10">
         <div className="relative size-full">
           <Image
@@ -30,7 +29,6 @@ const WorkCard = ({
         </div>
       </div>
 
-      {/* テキスト部分 */}
       <div className="mt-1 text-sm font-semibold">
         {title} | {year}
       </div>
