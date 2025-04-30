@@ -184,11 +184,7 @@ export const HomePage = () => {
 	const [profileMode, setProfileMode] = useState<'normal' | 'binary' | 'quantum'>('normal');
 	const [newsExpanded, setNewsExpanded] = useState<number | null>(null);
 	const [newsScrambled, setNewsScrambled] = useState(false);
-	const [footerMode, setFooterMode] = useState<'contact' | 'terminal'>('contact');
 	const [terminalText, setTerminalText] = useState('');
-	const [nameInput, setNameInput] = useState('');
-	const [emailInput, setEmailInput] = useState('');
-	const [messageInput, setMessageInput] = useState('');
 
 	// Replace skills array with a single selectedSkill state
 	const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
@@ -1290,257 +1286,99 @@ export const HomePage = () => {
 				/>
 
 				<div className="max-w-4xl mx-auto mt-20">
-					<h2 className="text-6xl font-black text-center text-white mb-12">CONTACT::</h2>
+					<h2 className="text-6xl font-black text-center text-white mb-12">TERMINAL::</h2>
 
 					<div className="p-8 bg-black/40 backdrop-blur-2xl border border-white/10 rounded-lg hover:scale-[1.01] transition-transform duration-300">
-						<div className="flex justify-center gap-6 mb-6 relative z-50">
-							<button
-								className={`px-4 py-2 rounded-md text-sm ${footerMode === 'contact' ? 'bg-white/20 text-white' : 'bg-black/40 text-white/60'} hover:bg-white/15 transition-colors`}
-								onClick={() => setFooterMode('contact')}
-								aria-pressed={footerMode === 'contact'}
-							>
-								CONTACT_FORM
-							</button>
-							<button
-								className={`px-4 py-2 rounded-md text-sm ${footerMode === 'terminal' ? 'bg-white/20 text-white' : 'bg-black/40 text-white/60'} hover:bg-white/15 transition-colors`}
-								onClick={() => setFooterMode('terminal')}
-								aria-pressed={footerMode === 'terminal'}
-							>
-								TERMINAL
-							</button>
-						</div>
+						<div className="text-green-400 font-mono p-4 bg-black/70 rounded-md border border-green-500/20 relative z-50">
+							<div className="mb-2 flex items-center">
+								<span className="text-green-500 mr-2">soma:~$</span>
+								<span className="animate-pulse">▌</span>
+							</div>
 
-						{footerMode === 'contact' && (
-							<div className="relative z-50">
-								<h3 className="text-2xl font-bold text-center text-white mb-6 glitch-text" data-text="MESSAGE::">
-									MESSAGE::
-								</h3>
+							<div className="h-40 overflow-auto">
+								<p className="mb-2">Welcome to Terminal v1.0.1</p>
+								<p className="mb-2">Type 'help' for available commands.</p>
 
-								<form className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
-									<div className="relative group">
-										<label
-											htmlFor="name-input"
-											className="text-white/70 text-sm mb-1 block transform transition-all group-hover:text-purple-400 group-hover:translate-x-2"
-										>
-											Your Name
-										</label>
-										<div className="relative overflow-hidden">
-											<input
-												id="name-input"
-												type="text"
-												placeholder="Enter your name"
-												className="w-full bg-black/50 border border-white/10 rounded-md px-4 py-3 text-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/30 
-												[clip-path:polygon(0_5%,5%_0,95%_0,100%_5%,100%_95%,95%_100%,5%_100%,0_95%)]
-												group-hover:[clip-path:polygon(0_15%,15%_0,85%_0,100%_15%,100%_85%,85%_100%,15%_100%,0_85%)]
-												transition-all duration-500"
-												value={nameInput}
-												onChange={(e) => setNameInput(e.target.value)}
-												tabIndex={1}
-												autoComplete="name"
-											/>
-											<div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 w-0 group-hover:w-full transition-all duration-700" />
-											<div className="absolute -top-4 -left-4 w-8 h-8 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-											<div className="absolute -bottom-4 -right-4 w-8 h-8 bg-cyan-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-										</div>
-									</div>
+								{terminalText && (
+									<div className="mt-4">
+										<p>$ {terminalText}</p>
+										{terminalText.toLowerCase() === 'help' && (
+											<div className="mt-2 text-xs">
+												<p>Available commands:</p>
+												<p className="ml-2">about - About Soma Takata</p>
+												<p className="ml-2">skills - List technical skills</p>
+												<p className="ml-2">projects - View projects</p>
+												<p className="ml-2">contact - Contact information</p>
+												<p className="ml-2">clear - Clear terminal</p>
+											</div>
+										)}
 
-									<div className="relative group">
-										<label
-											htmlFor="email-input"
-											className="text-white/70 text-sm mb-1 block transform transition-all group-hover:text-cyan-400 group-hover:translate-x-2"
-										>
-											Your Email
-										</label>
-										<div className="relative overflow-hidden">
-											<input
-												id="email-input"
-												type="email"
-												placeholder="Enter your email"
-												className="w-full bg-black/50 border border-white/10 rounded-md px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/30
-												[clip-path:polygon(0_5%,5%_0,95%_0,100%_5%,100%_95%,95%_100%,5%_100%,0_95%)]
-												group-hover:[clip-path:polygon(0_15%,15%_0,85%_0,100%_15%,100%_85%,85%_100%,15%_100%,0_85%)]
-												transition-all duration-500"
-												value={emailInput}
-												onChange={(e) => setEmailInput(e.target.value)}
-												tabIndex={2}
-												autoComplete="email"
-											/>
-											<div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 w-0 group-hover:w-full transition-all duration-700" />
-											<div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-											<div className="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-										</div>
-									</div>
+										{terminalText.toLowerCase() === 'about' && (
+											<div className="mt-2 text-xs">
+												<p>Soma Takata - Software Engineer</p>
+												<p>Currently developing next-generation web experiences using bleeding-edge technology.</p>
+												<p>Passionate about creating beautiful and interactive interfaces.</p>
+											</div>
+										)}
 
-									<div className="relative group">
-										<label
-											htmlFor="message-input"
-											className="text-white/70 text-sm mb-1 block transform transition-all group-hover:text-yellow-400 group-hover:translate-x-2"
-										>
-											Your Message
-										</label>
-										<div className="relative overflow-hidden">
-											<textarea
-												id="message-input"
-												placeholder="Enter your message"
-												rows={4}
-												className="w-full bg-black/50 border border-white/10 rounded-md px-4 py-3 text-white focus:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500/30
-												[clip-path:polygon(0_5%,5%_0,95%_0,100%_5%,100%_95%,95%_100%,5%_100%,0_95%)]
-												group-hover:[clip-path:polygon(0_15%,15%_0,85%_0,100%_15%,100%_85%,85%_100%,15%_100%,0_85%)]
-												transition-all duration-500"
-												value={messageInput}
-												onChange={(e) => setMessageInput(e.target.value)}
-												tabIndex={3}
-											/>
-											<div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-yellow-500 via-purple-500 to-yellow-500 w-0 group-hover:w-full transition-all duration-700" />
-											<div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-											<div className="absolute -bottom-4 -right-4 w-8 h-8 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-										</div>
-									</div>
-
-									<button
-										type="submit"
-										className="w-full py-4 relative group overflow-hidden
-										[clip-path:polygon(0_15%,15%_0,85%_0,100%_15%,100%_85%,85%_100%,15%_100%,0_85%)]
-										bg-black/50 border border-white/10 text-white
-										hover:border-purple-500/50 transition-all duration-300"
-										onClick={(e) => {
-											e.preventDefault();
-											// 一時的なグリッチ効果
-											setGlitchActive(true);
-											setTimeout(() => setGlitchActive(false), 500);
-											// フォーム送信ロジック
-											console.log('Form submitted:', { nameInput, emailInput, messageInput });
-
-											// 送信アニメーション
-											setColorMode((prev) => (prev === 'purple' ? 'cyan' : prev === 'cyan' ? 'yellow' : 'purple'));
-
-											setTimeout(() => {
-												alert('TRANSMISSION COMPLETE: QUANTUM STATE ENTANGLED');
-												// フォームをリセット
-												setNameInput('');
-												setEmailInput('');
-												setMessageInput('');
-											}, 800);
-										}}
-										tabIndex={4}
-									>
-										<span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-										<span className="absolute inset-0 flex items-center justify-center">
-											<span>SEND_MESSAGE()</span>
-											<span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-												[▲]
-											</span>
-										</span>
-										<span className="absolute top-0 left-0 w-full h-full">
-											{Array(5)
-												.fill(0)
-												.map((_, i) => (
-													<span
-														key={i}
-														className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 via-cyan-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-all duration-700"
-														style={{
-															transitionDelay: `${i * 100}ms`,
-															transform: `translateY(${i * 10}px) scaleX(${1 - i * 0.2})`,
-														}}
-													/>
+										{terminalText.toLowerCase() === 'skills' && (
+											<div className="mt-2 text-xs">
+												<p>Technical Skills:</p>
+												{skillsData.map((skill) => (
+													<p key={skill.name} className="ml-2">
+														- {skill.name}: {skill.level}% - {skill.years} years - {skill.description}
+													</p>
 												))}
-										</span>
-									</button>
-								</form>
+											</div>
+										)}
+
+										{terminalText.toLowerCase() === 'projects' && (
+											<div className="mt-2 text-xs">
+												<p>Recent Projects:</p>
+												{worksData.map((work) => (
+													<p key={work.title} className="ml-2">
+														- {work.title}: {work.description}
+													</p>
+												))}
+											</div>
+										)}
+
+										{terminalText.toLowerCase() === 'contact' && (
+											<div className="mt-2 text-xs">
+												<p>Contact Information:</p>
+												<p className="ml-2">GitHub: github.com/SomaTakata</p>
+												<p className="ml-2">Twitter: @soma_takata_en</p>
+												<p className="ml-2">Email: somatakata.job@gmail.com</p>
+											</div>
+										)}
+
+										{terminalText.toLowerCase() === 'clear' && <p>Terminal cleared.</p>}
+									</div>
+								)}
 							</div>
-						)}
 
-						{footerMode === 'terminal' && (
-							<div className="text-green-400 font-mono p-4 bg-black/70 rounded-md border border-green-500/20 relative z-50">
-								<div className="mb-2 flex items-center">
-									<span className="text-green-500 mr-2">soma:~$</span>
-									<span className="animate-pulse">▌</span>
-								</div>
+							<div className="mt-4 flex">
+								<span className="text-green-500 mr-2">soma:~$</span>
+								<input
+									type="text"
+									className="flex-1 bg-transparent border-none outline-none text-green-400"
+									value={terminalText}
+									onChange={(e) => setTerminalText(e.target.value)}
+									onKeyDown={(e) => {
+										if (e.key === 'Enter') {
+											// コマンド実行エフェクト
+											setGlitchActive(true);
+											setTimeout(() => setGlitchActive(false), 200);
 
-								<div className="h-40 overflow-auto">
-									<p className="mb-2">Welcome to Terminal v1.0.1</p>
-									<p className="mb-2">Type 'help' for available commands.</p>
-
-									{terminalText && (
-										<div className="mt-4">
-											<p>$ {terminalText}</p>
-											{terminalText.toLowerCase() === 'help' && (
-												<div className="mt-2 text-xs">
-													<p>Available commands:</p>
-													<p className="ml-2">about - About Soma Takata</p>
-													<p className="ml-2">skills - List technical skills</p>
-													<p className="ml-2">projects - View projects</p>
-													<p className="ml-2">contact - Contact information</p>
-													<p className="ml-2">clear - Clear terminal</p>
-												</div>
-											)}
-
-											{terminalText.toLowerCase() === 'about' && (
-												<div className="mt-2 text-xs">
-													<p>Soma Takata - Software Engineer</p>
-													<p>Currently developing next-generation web experiences using bleeding-edge technology.</p>
-													<p>Passionate about creating beautiful and interactive interfaces.</p>
-												</div>
-											)}
-
-											{terminalText.toLowerCase() === 'skills' && (
-												<div className="mt-2 text-xs">
-													<p>Technical Skills:</p>
-													{skillsData.map((skill) => (
-														<p key={skill.name} className="ml-2">
-															- {skill.name}: {skill.level}% - {skill.years} years - {skill.description}
-														</p>
-													))}
-												</div>
-											)}
-
-											{terminalText.toLowerCase() === 'projects' && (
-												<div className="mt-2 text-xs">
-													<p>Recent Projects:</p>
-													{worksData.map((work) => (
-														<p key={work.title} className="ml-2">
-															- {work.title}: {work.description}
-														</p>
-													))}
-												</div>
-											)}
-
-											{terminalText.toLowerCase() === 'contact' && (
-												<div className="mt-2 text-xs">
-													<p>Contact Information:</p>
-													<p className="ml-2">GitHub: github.com/SomaTakata</p>
-													<p className="ml-2">Twitter: @soma_takata_en</p>
-												</div>
-											)}
-
-											{terminalText.toLowerCase() === 'clear' && <p>Terminal cleared.</p>}
-										</div>
-									)}
-								</div>
-
-								<div className="mt-4 flex">
-									<span className="text-green-500 mr-2">soma:~$</span>
-									<input
-										type="text"
-										className="flex-1 bg-transparent border-none outline-none text-green-400"
-										value={terminalText}
-										onChange={(e) => setTerminalText(e.target.value)}
-										onKeyDown={(e) => {
-											if (e.key === 'Enter') {
-												// コマンド実行エフェクト
-												setGlitchActive(true);
-												setTimeout(() => setGlitchActive(false), 200);
-
-												// CLEARコマンド
-												if (terminalText.toLowerCase() === 'clear') {
-													setTerminalText('');
-												}
+											// CLEARコマンド
+											if (terminalText.toLowerCase() === 'clear') {
+												setTerminalText('');
 											}
-										}}
-									/>
-								</div>
+										}
+									}}
+								/>
 							</div>
-						)}
+						</div>
 					</div>
 				</div>
 			</motion.section>
