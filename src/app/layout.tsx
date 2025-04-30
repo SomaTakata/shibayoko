@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		default: APP_NAME,
 		template: `%s | Soma Takata`,
 	},
-	description: 'これは、SomaTakataのポートフォリオサイトです。',
+	description: 'This is Crazy portfolio site made by Soma Takata',
 };
 
 export default function RootLayout({
