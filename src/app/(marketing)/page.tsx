@@ -27,19 +27,11 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const { data: session, isPending } = useSession();
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`git clone ${siteConfig.socials.github}`);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  };
-
   return (
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
         <div className="w-full flex justify-between divide-x">
-          <div className="relative hidden md:flex w-1/3 aspect-square bg-black items-center justify-center group/titan border-dashed">
+          <div className="relative hidden md:flex w-1/3 aspect-square bg-background items-center justify-center group/titan border-dashed">
             <Circle />
             <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
             <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
@@ -56,7 +48,7 @@ export default function Home() {
                 className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
               >
                 <Link href="/" className="hover:underline">
-                  {siteConfig.origin.replace("https://", "")}
+                  -----
                 </Link>
               </div>
               {!isPending &&
@@ -101,29 +93,10 @@ export default function Home() {
               <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
             <div id="hero" className="flex flex-col p-4">
-              <h1 className="head-text-md">Titan</h1>
+              <h1 className="head-text-md">Soma Takata</h1>
               <p className="text-muted-foreground max-w-3xl">
                 {siteConfig.description}
               </p>
-            </div>
-            <div id="code" className="flex flex-col p-4">
-              <div className="p-2 border border-dashed hover:border-primary/50 bg-card text-xs md:text-sm flex items-center justify-between transition-all duration-200 delay-75">
-                <pre className="font-mono bg-linear-to-r from-muted-foreground to-foreground bg-clip-text text-transparent">
-                  git clone {siteConfig.socials.github}
-                </pre>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="size-5 cursor-pointer group/copy"
-                  onClick={handleCopy}
-                >
-                  {copied ? (
-                    <Check className="size-3" />
-                  ) : (
-                    <Copy className="size-3 group-hover/copy:text-foreground" />
-                  )}
-                </Button>
-              </div>
             </div>
             <div id="cta" className="flex items-center gap-4 p-4">
               <Button
@@ -215,50 +188,51 @@ export default function Home() {
 const techConfig = [
   {
     icon: <PanelsTopLeft className="size-4" />,
-    category: "Full-stack Framework",
-    name: "Next.js 15",
+    category: "1",
+    name: "Experience",
     description:
-      "Modern, full-stack React framework for building web applications.",
-    link: "https://nextjs.org",
+      "A timeline of my professional background and career highlights.",
+    link: "/experience",
   },
   {
     icon: <Shield className="size-4" />,
-    category: "Authentication",
-    name: "Better-Auth",
+    category: "2",
+    name: "Skills",
     description:
-      "Secure authentication solution with OAuth, email/password, magic links, and more",
-    link: "https://better-auth.com",
+      "A showcase of my technical and soft skills across various domains.",
+    link: "skills",
   },
   {
     icon: <Database className="size-4" />,
-    category: "ORM",
-    name: "Drizzle ORM",
+    category: "3",
+    name: "Works",
     description:
-      "TypeScript ORM with a focus on type safety and developer experience.",
-    link: "https://orm.drizzle.team/",
+      "Selected projects that demonstrate my capabilities and creativity.",
+    link: "/works",
   },
   {
     icon: <Server className="size-4" />,
-    category: "Database",
-    name: "Postgres",
-    description: "It's a Postgres database, what else do you need?",
-    link: "https://neon.tech",
+    category: "4",
+    name: "News",
+    description:
+      "Latest updates, announcements, and things I'm currently working on.",
+    link: "/news",
   },
   {
     icon: <Component className="size-4" />,
-    category: "UI Components",
-    name: "ShadCN/UI",
+    category: "5",
+    name: "Terminal",
     description:
-      "Beautifully designed components built with Radix UI and Tailwind CSS.",
-    link: "https://ui.shadcn.com",
+      "An interactive terminal-style space to explore more about me.",
+    link: "/terminal",
   },
   {
     icon: <Code className="size-4" />,
-    category: "CSS Framework",
-    name: "Tailwindcss v4",
+    category: "6",
+    name: "Activity",
     description:
-      "Utility-first CSS framework for rapidly building custom user interfaces.",
-    link: "https://tailwindcss.com",
+      "GitHub activity and contributions across various open source projects.",
+    link: "/activity",
   },
 ];
 
@@ -270,7 +244,7 @@ export const Circle = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="200" cy="200" r="100" fill="white" />
+      <circle cx="200" cy="200" r="100" fill="CurrentColor" />
     </svg>
   );
 };
