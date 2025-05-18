@@ -19,6 +19,11 @@ import {
   Copy,
   Check,
   ArrowUpRight,
+  X,
+  Twitter,
+  Facebook,
+  Linkedin,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "@/lib/auth-client";
@@ -91,6 +96,7 @@ export default function Home() {
                 ))}
               <UserProfile className="border-dashed size-10 md:size-14" />
               <ThemeToggler className="border-dashed size-10 md:size-14" />
+              <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
             <div id="hero" className="flex flex-col p-4">
               <h1 className="head-text-md">Soma Takata</h1>
@@ -98,7 +104,7 @@ export default function Home() {
                 {siteConfig.description}
               </p>
             </div>
-            <div id="cta" className="flex items-center gap-4 p-4">
+            <div id="cta" className="flex flex-wrap items-center gap-4 p-4">
               <Button
                 variant="outline"
                 asChild
@@ -114,11 +120,65 @@ export default function Home() {
                   <span>GitHub</span>
                 </a>
               </Button>
-              <Button asChild>
-                <Link href="/dashboard" className="gap-2 group">
-                  <span>Get started</span>
-                  <ArrowRight className="size-4 group-hover:translate-x-1 transition-all duration-150" />
-                </Link>
+              <Button
+                variant="outline"
+                asChild
+                className="relative border-dashed"
+              >
+                <a
+                  href={siteConfig.socials.x_jp}
+                  target="_blank"
+                  className="gap-2 group"
+                >
+                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <Twitter className="size-4" />
+                  <span>JP</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                asChild
+                className="relative border-dashed"
+              >
+                <a
+                  href={siteConfig.socials.global}
+                  target="_blank"
+                  className="gap-2 group"
+                >
+                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <Twitter className="size-4" />
+                  <span>Global</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                asChild
+                className="relative border-dashed"
+              >
+                <a
+                  href={siteConfig.socials.zenn}
+                  target="_blank"
+                  className="gap-2 group"
+                >
+                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <Zap className="size-4" />
+                  <span>Zenn</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                asChild
+                className="relative border-dashed"
+              >
+                <a
+                  href={siteConfig.socials.linkedin}
+                  target="_blank"
+                  className="gap-2 group"
+                >
+                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <Linkedin className="size-4" />
+                  <span>Linkedin</span>
+                </a>
               </Button>
             </div>
           </div>

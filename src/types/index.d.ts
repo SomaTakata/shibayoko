@@ -8,9 +8,12 @@ export type SiteConfig = {
   creator: {
     name: string;
     url: string;
-  }
+  };
   socials: {
     github: string;
-    x: string;
-  }
-}
+    x_jp: string;
+    x_global: string;
+    zenn: string;
+    linkedin: string;
+  };
+};
