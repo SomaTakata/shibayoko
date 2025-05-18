@@ -1,10 +1,11 @@
 import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Titan",
-  title: "Titan - Powerful Next.js 15 Template with Better-Auth, Drizzle ORM, PostgreSQL, and Shadcn UI",
-  description: "Modern Next.js 15 stack with Better-Auth, Drizzle ORM, PostgreSQL, Shadcn UI, and Tailwind v4 for fast, secure web app development.",
-  origin: "https://titan.rdsx.dev",
+  name: "SomaTakata",
+  title: "SomaTakata Portfolio.",
+  description:
+    "Hi I am SomaTakata, a software engineer in Japan. I am a full stack developer. I always use Next.js and Tailwind CSS.",
+  origin: "https://soma-takata.vercel.app",
   keywords: [
     "Next.js 15",
     "Authentication",
@@ -14,15 +15,18 @@ export const siteConfig: SiteConfig = {
     "Tailwind CSS V4",
     "Shadcn UI",
     "TypeScript",
-    "Full-Stack Template"
+    "Full-Stack Template",
   ],
   og: "https://titan.rdsx.dev/og.png",
   creator: {
     name: "rds_agi",
-    url: "https://rdsx.dev",
+    url: "https://",
   },
   socials: {
-    github: "https://github.com/rudrodip/titan",
-    x: "https://x.com/rds_agi",
-  }
-}
+    github: "https://github.com/SomaTakata",
+    x_jp: "https://x.com/soma_takata",
+    x_global: "https://x.com/soma_takata_en",
+    zenn: "https://zenn.dev/soma_takata",
+    linkedin: "https://www.linkedin.com/in/soma-takata-819293303/",
+  },
+};
