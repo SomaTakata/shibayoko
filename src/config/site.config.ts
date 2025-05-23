@@ -2,7 +2,7 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "SomaTakata",
-  title: "SomaTakata Portfolio.",
+  title: "SomaTakata Portfolio",
   description:
     "Hi I am SomaTakata, a software engineer in Japan. I am a full stack developer. I always use Next.js and Tailwind CSS.",
   origin: "https://soma-takata.vercel.app",
