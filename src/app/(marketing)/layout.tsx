@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import ThemeToggler from "@/components/theme/toggler";
 import { Button } from "@/components/ui/button";
 import { UserProfile } from "@/components/user-profile";
@@ -10,9 +10,8 @@ import {
   PanelsTopLeft,
   Shield,
   Database,
-  Sparkle,
   Github,
-  ArrowUpRight,
+  // ArrowUpRight,
   Twitter,
   Linkedin,
   Zap,
@@ -77,7 +76,7 @@ const techConfig = [
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { data: session, isPending } = useSession();
+  // const { data: session, isPending } = useSession();
   const pathname = usePathname();
 
   return (
@@ -261,7 +260,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     10
                   </Link>
                 </div>
-                {!isPending &&
+                {/* {!isPending &&
                   (session ? (
                     <Button
                       className="h-full border-dashed"
@@ -298,7 +297,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         </div>
                       </Link>
                     </Button>
-                  ))}
+                  ))} */}
                 <UserProfile className="border-dashed size-10 md:size-14" />
                 <ThemeToggler className="border-dashed size-10 md:size-14" />
               </div>
