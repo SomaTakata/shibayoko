@@ -20,7 +20,6 @@ export const siteConfig: SiteConfig = {
     "たかたそうま",
     "たかた そうま",
   ],
-  og: "https://titan.rdsx.dev/og.png",
   creator: {
     name: "rds_agi",
     url: "https://",

@@ -256,7 +256,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       )}
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
         <div className="w-full flex justify-between divide-x">
-          <div className="hidden md:flex flex-col w-1/3 aspect-square bg-background items-center justify-start group/titan border-dashed">
+          <div className="hidden md:flex flex-col w-1/3 aspect-square bg-background items-center justify-start group/soma border-dashed">
             <div
               id="brand"
               className="md:border-b w-full border-dashed flex items-center justify-start"
@@ -481,7 +481,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   ))} */}
                 {/* <UserProfile className="border-dashed size-10 md:size-14" /> */}
               </div>
-              <div className="md:hidden flex flex-col bg-background items-center justify-start group/titan border-dashed">
+              <div className="md:hidden flex flex-col bg-background items-center justify-start group/soma border-dashed">
                 {techConfig.map((tech, index) => {
                   if (
                     pathname &&

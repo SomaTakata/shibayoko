@@ -1,11 +1,6 @@
-# Titan
+# Soma
 
-Next.js 15 fullstack template with better-auth for authentication and drizzle-orm as the ORM.
-
-![Titan](./public/og.png)
-
-> [!WARNING]
-> This project uses Next.js 15-canary to support node runtime on middleware. This is not yet supported in stable version.
+This is SomaTakata Portfolio
 
 ## Tech Stack
 
@@ -33,7 +28,7 @@ Next.js 15 fullstack template with better-auth for authentication and drizzle-or
 1. Clone the repository
 
 ```bash
-git clone https://github.com/rudrodip/titan.git
+git clone https://github.com/SomaTakata/portfolio.git
 ```
 
 2. Install dependencies

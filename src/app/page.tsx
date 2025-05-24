@@ -34,12 +34,12 @@ export default function Home() {
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
         <div className="w-full flex justify-between divide-x">
-          <div className="relative hidden md:flex w-1/3 aspect-square bg-background items-center justify-center group/titan border-dashed">
+          <div className="relative hidden md:flex w-1/3 aspect-square bg-background items-center justify-center group/soma border-dashed">
             <Circle />
-            <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
-            <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
-            <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
-            <div className="absolute bottom-0 right-0 size-4 border-b-2 border-r-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
+            <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-foreground opacity-0 group-hover/soma:opacity-100 transition-all duration-200"></div>
+            <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-foreground opacity-0 group-hover/soma:opacity-100 transition-all duration-200"></div>
+            <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-foreground opacity-0 group-hover/soma:opacity-100 transition-all duration-200"></div>
+            <div className="absolute bottom-0 right-0 size-4 border-b-2 border-r-2 border-foreground opacity-0 group-hover/soma:opacity-100 transition-all duration-200"></div>
           </div>
           <div className="flex-1 flex flex-col">
             <div
