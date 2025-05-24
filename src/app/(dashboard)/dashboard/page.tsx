@@ -74,7 +74,7 @@ export default async function DashboardPage() {
                 className="relative border-dashed"
               >
                 <a
-                  href={siteConfig.socials.x}
+                  href={siteConfig.socials.x_jp}
                   target="_blank"
                   className="gap-2 group"
                 >

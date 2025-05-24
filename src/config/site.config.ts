@@ -20,8 +20,9 @@ export const siteConfig: SiteConfig = {
     "たかたそうま",
     "たかた そうま",
   ],
+  og: "https://soma-takata.vercel.app/og.png",
   creator: {
-    name: "rds_agi",
+    name: "soma-takata",
     url: "https://",
   },
   socials: {

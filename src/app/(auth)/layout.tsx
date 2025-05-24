@@ -1,4 +1,4 @@
-import { Circle } from "@/app/(marketing)/page";
+import { Circle } from "../page";
 
 export default function AuthLayout({
   children,
