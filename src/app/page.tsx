@@ -21,6 +21,7 @@ import {
   Activity,
   Terminal,
   User,
+  CircleIcon,
 } from "lucide-react";
 import Link from "next/link";
 // import { useSession } from "@/lib/auth-client";
@@ -48,6 +49,18 @@ export default function Home() {
               <div
                 id="brand"
                 className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
+              >
+                <Link
+                  href="/"
+                  className="hover:underline flex items-center gap-2"
+                >
+                  <CircleIcon size={15} />
+                  Soma Takata
+                </Link>
+              </div>
+              <div
+                id="brand"
+                className="font-mono text-sm flex items-center h-full px-3 border-dashed"
               >
                 <Link
                   href="/"
@@ -95,7 +108,7 @@ export default function Home() {
                     </Link>
                   </Button>
                 ))} */}
-              <UserProfile className="border-dashed size-10 md:size-14" />
+              {/* <UserProfile className="border-dashed size-10 md:size-14" /> */}
               <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
             <div id="hero" className="flex flex-col p-4">
