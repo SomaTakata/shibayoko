@@ -49,13 +49,13 @@ export default function Skills() {
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto max-h-[50rem]">
+    <div className="flex-1 overflow-y-auto max-h-[43rem]">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {skillItems.map((skill, idx) => (
           <div
             key={idx}
             className={cn(
-              "relative w-full p-6 hover:bg-muted/50 transition-all duration-150 group/item border-dashed",
+              "relative w-full p-6 hover:bg-muted/30 transition-all group/item border-dashed",
               {
                 "border-b": idx < skillItems.length - 1,
                 "lg:border-b-0": idx >= skillItems.length - 2,
