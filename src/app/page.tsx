@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import ThemeToggler from "@/components/theme/toggler";
 import { Button } from "@/components/ui/button";
 import { UserProfile } from "@/components/user-profile";
@@ -13,7 +13,7 @@ import {
   ArrowRight,
   Sparkle,
   Github,
-  ArrowUpRight,
+  // ArrowUpRight,
   Twitter,
   Linkedin,
   Zap,
@@ -23,11 +23,11 @@ import {
   User,
 } from "lucide-react";
 import Link from "next/link";
-import { useSession } from "@/lib/auth-client";
+// import { useSession } from "@/lib/auth-client";
 
 export default function Home() {
-  const [copied, setCopied] = useState(false);
-  const { data: session, isPending } = useSession();
+  // const [copied, setCopied] = useState(false);
+  // const { data: session, isPending } = useSession();
 
   return (
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
@@ -57,7 +57,7 @@ export default function Home() {
                   10
                 </Link>
               </div>
-              {!isPending &&
+              {/* {!isPending &&
                 (session ? (
                   <Button
                     className="h-full border-dashed"
@@ -94,7 +94,7 @@ export default function Home() {
                       </div>
                     </Link>
                   </Button>
-                ))}
+                ))} */}
               <UserProfile className="border-dashed size-10 md:size-14" />
               <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
@@ -141,7 +141,7 @@ export default function Home() {
                 className="relative border-dashed"
               >
                 <a
-                  href={siteConfig.socials.global}
+                  href={siteConfig.socials.x_global}
                   target="_blank"
                   className="gap-2 group"
                 >
@@ -191,7 +191,6 @@ export default function Home() {
             <a
               key={index}
               href={tech.link}
-              target="_blank"
               className={cn(
                 "relative w-full p-6 hover:bg-muted/50 transition-all duration-150 group/item border-dashed",
                 {
