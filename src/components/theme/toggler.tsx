@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 type ThemeTogglerProps = {
   className?: string;
-}
+};
 
 export default function ThemeToggler({ className }: ThemeTogglerProps) {
   const { theme, setTheme } = useTheme();
@@ -43,13 +43,14 @@ export default function ThemeToggler({ className }: ThemeTogglerProps) {
   };
 
   const toggleTheme = () => {
-    //@ts-ignore
-    if (!document.startViewTransition) switchTheme();
-
-    //@ts-ignore
-    document.startViewTransition(switchTheme);
+    // @ts-ignore
+    if (typeof document.startViewTransition === "function") {
+      // @ts-ignore
+      document.startViewTransition(switchTheme);
+    } else {
+      switchTheme();
+    }
   };
-
 
   return (
     <Button
