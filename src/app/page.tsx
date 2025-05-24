@@ -20,6 +20,7 @@ import {
   Newspaper,
   Activity,
   Terminal,
+  User,
 } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "@/lib/auth-client";
@@ -48,7 +49,11 @@ export default function Home() {
                 id="brand"
                 className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
               >
-                <Link href="/" className="hover:underline">
+                <Link
+                  href="/"
+                  className="hover:underline flex items-center gap-1"
+                >
+                  <User size={15} />
                   10
                 </Link>
               </div>
@@ -91,7 +96,6 @@ export default function Home() {
                   </Button>
                 ))}
               <UserProfile className="border-dashed size-10 md:size-14" />
-              <ThemeToggler className="border-dashed size-10 md:size-14" />
               <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
             <div id="hero" className="flex flex-col p-4">
