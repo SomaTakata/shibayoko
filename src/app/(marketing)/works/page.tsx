@@ -37,92 +37,90 @@ export default function Works() {
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto  max-h-[43rem] p-4">
-      <div className="flex flex-col">
-        {projectItems.map((item, idx) => (
-          <div
-            key={idx}
-            className={
-              `flex items-center w-full gap-4 group border-b border-dashed p-6 hover:bg-muted/30 ` +
-              (idx === 0 ? "hover:border" : "hover:border-x")
-            }
-          >
-            {/* メインコンテンツ */}
-            <div className="flex items-start gap-4 w-full">
-              {/* アイコン */}
-              <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full group-hover:bg-background group-hover:text-foreground  flex-shrink-0">
-                {item.icon}
-              </span>
+    <div className="flex flex-col p-4">
+      {projectItems.map((item, idx) => (
+        <div
+          key={idx}
+          className={
+            `flex items-center w-full gap-4 group border-b border-dashed p-6 hover:bg-muted/30 ` +
+            (idx === 0 ? "hover:border" : "hover:border-x")
+          }
+        >
+          {/* メインコンテンツ */}
+          <div className="flex items-start gap-4 w-full">
+            {/* アイコン */}
+            <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full group-hover:bg-background group-hover:text-foreground  flex-shrink-0">
+              {item.icon}
+            </span>
 
-              {/* プロジェクト情報 */}
-              <div className="w-full">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs text-muted-foreground   ">
-                    {item.period}
-                  </span>
-                  <span
-                    className={`px-2 py-1 text-xs font-medium rounded-full   ${
-                      item.status === "Live"
-                        ? "bg-green-500/20 text-green-600 "
-                        : "bg-orange-500/20 text-orange-600"
-                    }`}
-                  >
-                    {item.status}
-                  </span>
+            {/* プロジェクト情報 */}
+            <div className="w-full">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-muted-foreground   ">
+                  {item.period}
+                </span>
+                <span
+                  className={`px-2 py-1 text-xs font-medium rounded-full   ${
+                    item.status === "Live"
+                      ? "bg-green-500/20 text-green-600 "
+                      : "bg-orange-500/20 text-orange-600"
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </div>
+
+              <h3 className="text-lg font-semibold mb-2 ">{item.title}</h3>
+
+              {item.description && (
+                <p className="text-sm text-muted-foreground  mb-3">
+                  {item.description}
+                </p>
+              )}
+              <div className="flex items-center justify-between mt-6">
+                {/* 技術スタック */}
+                <div className="flex flex-wrap gap-2">
+                  {item.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded "
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                <h3 className="text-lg font-semibold mb-2 ">{item.title}</h3>
-
-                {item.description && (
-                  <p className="text-sm text-muted-foreground  mb-3">
-                    {item.description}
-                  </p>
-                )}
-                <div className="flex items-center justify-between mt-6">
-                  {/* 技術スタック */}
-                  <div className="flex flex-wrap gap-2">
-                    {item.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded "
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* アクションボタン */}
-                  <div className="flex items-center gap-4">
-                    {item.link && (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        className="flex items-center gap-2 text-sm text-primary   "
-                      >
-                        <ExternalLink size={14} />
-                        Demo
-                      </a>
-                    )}
-                    {item.github && (
-                      <a
-                        href={item.github}
-                        target="_blank"
-                        className="flex items-center gap-2 text-sm text-primary   "
-                      >
-                        <Github size={14} />
-                        Source Code
-                      </a>
-                    )}
-                  </div>
+                {/* アクションボタン */}
+                <div className="flex items-center gap-4">
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm text-primary   "
+                    >
+                      <ExternalLink size={14} />
+                      Demo
+                    </a>
+                  )}
+                  {item.github && (
+                    <a
+                      href={item.github}
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm text-primary   "
+                    >
+                      <Github size={14} />
+                      Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-
-            {/* ホバー時のボーダー効果 */}
-            <div className="absolute inset-0 border border-dashed border-transparent  rounded-lg  pointer-events-none"></div>
           </div>
-        ))}
-      </div>
+
+          {/* ホバー時のボーダー効果 */}
+          <div className="absolute inset-0 border border-dashed border-transparent  rounded-lg  pointer-events-none"></div>
+        </div>
+      ))}
     </div>
   );
 }

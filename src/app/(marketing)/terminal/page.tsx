@@ -510,49 +510,45 @@ export default function Home() {
   };
 
   return (
-    <div className="flex-1 max-h-[43rem] max-w-screen overflow-x-auto bg-background overflow-y-auto text-green-500 dark:text-green-400 font-mono text-sm">
-      <div className="flex-1 overflow-y-auto ">
-        {/* ターミナルコンテンツ */}
-        <div className="p-4 space-y-1">
-          {/* コマンド履歴表示 */}
-          {commandHistory.map((entry, idx) => (
-            <div key={idx} className="mb-2">
-              <div className="flex items-center gap-2">
-                <span className="text-blue-500 dark:text-blue-400">
-                  user@portfolio
-                </span>
-                <span className="text-primary">~</span>
-                <span className="text-yellow-500  dark:text-yellow-400">$</span>
-                <span className="text-green-500 dark:text-green-400">
-                  {entry.command}
-                </span>
-              </div>
-              <div className="text-muted-foreground ml-4">{entry.response}</div>
-            </div>
-          ))}
-
-          {/* 最終行（入力可能） */}
-          {!isTyping && (
-            <div className="flex items-center gap-2">
-              <span className="text-blue-500 dark:text-blue-400">
-                user@portfolio
-              </span>
-              <span className="text-primary">~</span>
-              <span className="text-yellow-500  dark:text-yellow-400">$</span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={currentCommand}
-                onChange={(e) => setCurrentCommand(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className="bg-transparent text-green-500 dark:text-green-400 outline-none flex-1 font-mono"
-                autoComplete="off"
-                spellCheck="false"
-              />
-            </div>
-          )}
+    // ターミナルコンテンツ
+    <div className="max-w-full overflow-x-auto p-4 space-y-1 text-green-500 dark:text-green-400 font-mono text-sm">
+      {/* コマンド履歴表示 */}
+      {commandHistory.map((entry, idx) => (
+        <div key={idx} className="mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500 dark:text-blue-400">
+              user@portfolio
+            </span>
+            <span className="text-primary">~</span>
+            <span className="text-yellow-500  dark:text-yellow-400">$</span>
+            <span className="text-green-500 dark:text-green-400">
+              {entry.command}
+            </span>
+          </div>
+          <div className="text-muted-foreground ml-4">{entry.response}</div>
         </div>
-      </div>
+      ))}
+
+      {/* 最終行（入力可能） */}
+      {!isTyping && (
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500 dark:text-blue-400">
+            user@portfolio
+          </span>
+          <span className="text-primary">~</span>
+          <span className="text-yellow-500  dark:text-yellow-400">$</span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={currentCommand}
+            onChange={(e) => setCurrentCommand(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="bg-transparent text-green-500 dark:text-green-400 outline-none flex-1 font-mono"
+            autoComplete="off"
+            spellCheck="false"
+          />
+        </div>
+      )}
     </div>
   );
 }
