@@ -11,6 +11,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
+  const [currentLine, setCurrentLine] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [commandHistory, setCommandHistory] = useState<
     { command: string; response: React.ReactNode }[]
@@ -509,8 +510,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex-1 max-h-[43rem] bg-background overflow-y-auto text-green-500 dark:text-green-400 font-mono text-sm">
-      <div className="flex-1 overflow-y-auto max-h-screen">
+    <div className="flex-1 max-h-[43rem] max-w-screen overflow-x-auto bg-background overflow-y-auto text-green-500 dark:text-green-400 font-mono text-sm">
+      <div className="flex-1 overflow-y-auto ">
         {/* ターミナルコンテンツ */}
         <div className="p-4 space-y-1">
           {/* コマンド履歴表示 */}
