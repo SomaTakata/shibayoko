@@ -423,18 +423,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               >
                 <div
                   id="brand"
-                  className="hidden  font-mono text-sm flex-1 md:flex items-center h-full px-3 border-dashed"
-                >
-                  <Link
-                    href="/"
-                    className="hover:underline flex items-center gap-1"
-                  >
-                    <User size={15} />
-                    10
-                  </Link>
-                </div>
-                <div
-                  id="brand"
                   className="md:hidden font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
                 >
                   <Link
