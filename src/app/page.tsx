@@ -48,7 +48,7 @@ export default function Home() {
             >
               <div
                 id="brand"
-                className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
+                className="md:hidden font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
               >
                 <Link
                   href="/"
@@ -56,18 +56,6 @@ export default function Home() {
                 >
                   <CircleIcon size={15} />
                   Soma Takata
-                </Link>
-              </div>
-              <div
-                id="brand"
-                className="font-mono text-sm flex items-center h-full px-3 border-dashed"
-              >
-                <Link
-                  href="/"
-                  className="hover:underline flex items-center gap-1"
-                >
-                  <User size={15} />
-                  10
                 </Link>
               </div>
               {/* {!isPending &&
