@@ -76,33 +76,29 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto  max-h-[43rem] p-4">
-      <div className="flex flex-col gap-3">
-        {timelineItems.map((item, idx) => (
-          <a
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={idx}
-            className="flex items-center gap-4 group hover:border hover:bg-muted/30 border-dashed p-6"
-          >
-            <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full">
-              {item.icon}
-            </span>
-            <div className="flex flex-col gap-1">
-              <span className="text-xs text-muted-foreground">
-                {item.period}
-              </span>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              {item.description && (
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
-              )}
-            </div>
-          </a>
-        ))}
-      </div>
+    <div className="flex flex-col gap-3 p-4">
+      {timelineItems.map((item, idx) => (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={idx}
+          className="flex items-center gap-4 group hover:border hover:bg-muted/30 border-dashed p-6"
+        >
+          <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full">
+            {item.icon}
+          </span>
+          <div className="flex flex-col gap-1">
+            <span className="text-xs text-muted-foreground">{item.period}</span>
+            <h3 className="text-lg font-semibold">{item.title}</h3>
+            {item.description && (
+              <p className="text-sm text-muted-foreground">
+                {item.description}
+              </p>
+            )}
+          </div>
+        </a>
+      ))}
     </div>
   );
 }

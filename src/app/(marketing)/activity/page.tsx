@@ -13,7 +13,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex-1 flex overflow-y-auto max-h-[50rem] justify-center items-center p-4">
+    <div className="flex justify-center items-center p-4 h-full">
       <Card className="w-full max-w-md border-dashed border-2 rounded-none shadow-none">
         <CardHeader className="border-b border-dashed pb-4">
           <div className="flex items-center space-x-2">
