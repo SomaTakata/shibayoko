@@ -73,6 +73,13 @@ export default function Home() {
       description: "新規機能開発 (2ヶ月)",
       link: "https://nulogic.co.jp/",
     },
+    {
+      icon: <Database className="w-5 h-5 text-muted-foreground/60" />,
+      period: "2025.5 - 2025.7",
+      title: "株式会社Mercari (メルカリハロ)",
+      description: "フロントエンド開発 (3ヶ月)",
+      link: "https://hallo.mercari.com/",
+    },
   ];
 
   return (

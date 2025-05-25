@@ -102,7 +102,6 @@ export default function Home() {
     },
     {
       date: "2023.5",
-
       output: "株式会社リクルート",
       description: "フロントエンド開発 (10か月)",
       link: "https://www.recruit.co.jp/",
@@ -110,7 +109,6 @@ export default function Home() {
     },
     {
       date: "2023.11",
-
       output: "株式会社MichibikuGroup",
       description: "フロントエンド開発 (2か月)",
       link: "https://michibikugroup.co.jp/",
@@ -118,7 +116,6 @@ export default function Home() {
     },
     {
       date: "2024.3",
-
       output: "TechNova創設 代表",
       description: "プログラミングサークルの設立",
       link: "https://x.com/ShibaYoko_SIT",
@@ -126,7 +123,6 @@ export default function Home() {
     },
     {
       date: "2024.4",
-
       output: "株式会社ハウテレビジョン",
       description: "フロントエンド開発 (3か月)",
       link: "https://howtelevision.co.jp/",
@@ -134,7 +130,6 @@ export default function Home() {
     },
     {
       date: "2024.9",
-
       output: "株式会社LayerX",
       description: "フルスタック開発 (2週間)",
       link: "https://layerx.co.jp/",
@@ -142,7 +137,6 @@ export default function Home() {
     },
     {
       date: "2024.12",
-
       output: "株式会社メドレー",
       description: "フルスタック開発 (2週間)",
       link: "https://www.medley.jp/",
@@ -150,7 +144,6 @@ export default function Home() {
     },
     {
       date: "2025.1",
-
       output: "株式会社NOT A HOTEL",
       description: "新規機能開発 (2週間)",
       link: "https://notahotel.com/",
@@ -158,7 +151,6 @@ export default function Home() {
     },
     {
       date: "2025.2",
-
       output: "しばよこの設立（TechNovaからの統合）代表",
       description: "エンジニアデザイナーサークルの設立",
       link: "https://x.com/ShibaYoko_SIT",
@@ -166,10 +158,16 @@ export default function Home() {
     },
     {
       date: "2025.3",
-
       output: "株式会社Nulogic",
       description: "新規機能開発 (2ヶ月)",
       link: "https://nulogic.co.jp/",
+      type: "work",
+    },
+    {
+      date: "2025.5 - 2025.7",
+      output: "株式会社Mercari (メルカリハロ)",
+      description: "フロントエンド開発 (3ヶ月)",
+      link: "https://hallo.mercari.com/",
       type: "work",
     },
   ];
