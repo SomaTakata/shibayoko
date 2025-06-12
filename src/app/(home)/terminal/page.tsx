@@ -94,7 +94,7 @@ export default function Home() {
   // 経歴データをターミナル風に変更
   const timelineItems = [
     {
-      date: "2020.4",
+      date: "2022.4",
       output: "芝浦工業大学 入学",
       description: "情報工学科での学習を開始",
       link: "https://www.shibaura-it.ac.jp/",

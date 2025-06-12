@@ -5,7 +5,7 @@ export default function Home() {
   const timelineItems = [
     {
       icon: <Sparkle className="w-5 h-5 text-muted-foreground/60" />,
-      period: "2020.4 -",
+      period: "2022.4 -",
       title: "芝浦工業大学 入学",
       description: "",
       link: "https://www.shibaura-it.ac.jp/",
