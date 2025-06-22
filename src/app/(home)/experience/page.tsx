@@ -62,7 +62,7 @@ export default function Home() {
     {
       icon: <Sparkle className="w-5 h-5 text-muted-foreground/60" />,
       period: "2025.2 -",
-      title: "しばよこの設立（TechNovaからの統合）代表",
+      title: "しばよこ創設 代表",
       description: "エンジニアデザイナーサークルの設立",
       link: "https://x.com/ShibaYoko_SIT",
     },

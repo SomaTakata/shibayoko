@@ -152,7 +152,7 @@ export default function Home() {
     },
     {
       date: "2025.2",
-      output: "しばよこの設立（TechNovaからの統合）代表",
+      output: "しばよこ創設 代表",
       description: "エンジニアデザイナーサークルの設立",
       link: "https://x.com/ShibaYoko_SIT",
       type: "leadership",
