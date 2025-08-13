@@ -1,15 +1,15 @@
 import { ExternalLink, BookOpen, Calendar, Users } from "lucide-react";
 
 export default function News() {
-  // ニュースデータを配列で定義
+  // Define news data in an array
   const newsItems = [
     {
       icon: <BookOpen className="w-5 h-5 text-muted-foreground/60" />,
       date: "2024.9.17",
-      title: "LayerXサマーインターン体験記を投稿しました！",
+      title: "Posted LayerX Summer Internship Experience Report!",
       description:
-        "LayerXでの3ヶ月間のサマーインターンシップでの経験や学んだことについて詳しく書きました。",
-      category: "インターン体験記",
+        "Detailed writeup about my experiences and learnings during a 3-month summer internship at LayerX.",
+      category: "Internship Report",
       link: "https://zenn.dev/soma_takata/articles/3a5ad127b57e04",
       type: "Blog Post",
     },
@@ -17,10 +17,10 @@ export default function News() {
       icon: <Users className="w-5 h-5 text-muted-foreground/60" />,
       date: "2024.7.26",
       title:
-        "ハウテレビジョンでの3ヶ月のエンジニアインターン体験記投稿しました！",
+        "Posted 3-month engineer internship experience report at How Television!",
       description:
-        "ハウテレビジョンでのエンジニアインターンシップでの経験と成長について記録しました。",
-      category: "インターン体験記",
+        "Documented my experiences and growth during the engineering internship at How Television.",
+      category: "Internship Report",
       link: "https://howtv.hatenablog.com/entry/2024/07/26/174358",
       type: "Blog Post",
     },
@@ -36,14 +36,14 @@ export default function News() {
             (idx === 0 ? "hover:border" : "hover:border-x")
           }
         >
-          {/* メインコンテンツ */}
+          {/* Main content */}
           <div className="flex items-start gap-4 w-full">
-            {/* アイコン */}
+            {/* Icon */}
             <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full group-hover:bg-background group-hover:text-foreground flex-shrink-0">
               {item.icon}
             </span>
 
-            {/* ニュース情報 */}
+            {/* News information */}
             <div className="w-full">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-2">
@@ -66,14 +66,14 @@ export default function News() {
               )}
 
               <div className="flex items-center justify-between mt-4">
-                {/* カテゴリ */}
+                {/* Category */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
                     {item.category}
                   </span>
                 </div>
 
-                {/* アクションボタン */}
+                {/* Action buttons */}
                 <div className="flex items-center gap-4">
                   {item.link && (
                     <a
@@ -82,7 +82,7 @@ export default function News() {
                       className="flex items-center gap-2 text-sm text-primary hover:underline"
                     >
                       <ExternalLink size={14} />
-                      詳細を見る
+                      View Details
                     </a>
                   )}
                 </div>
@@ -90,7 +90,7 @@ export default function News() {
             </div>
           </div>
 
-          {/* ホバー時のボーダー効果 */}
+          {/* Hover border effect */}
           <div className="absolute inset-0 border border-dashed border-transparent rounded-lg pointer-events-none"></div>
         </div>
       ))}

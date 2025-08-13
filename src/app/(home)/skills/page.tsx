@@ -2,48 +2,48 @@ import { cn } from "@/lib/utils";
 import { Sparkle } from "lucide-react";
 
 export default function Skills() {
-  // スキルデータを配列で定義
+  // Define skill data in an array
   const skillItems = [
     {
       name: "TypeScript",
       experience: "3 years",
       proficiency: 90,
-      description: "主要な開発言語として使用",
+      description: "Used as primary development language",
       category: "Language",
     },
     {
       name: "React",
       experience: "3 years",
       proficiency: 85,
-      description: "フロントエンド開発のメインフレームワーク",
+      description: "Main framework for frontend development",
       category: "Frontend",
     },
     {
       name: "Next.js",
       experience: "2 years",
       proficiency: 80,
-      description: "Webアプリケーション開発に使用",
+      description: "Used for web application development",
       category: "Framework",
     },
     {
       name: "Node.js",
       experience: "2 years",
       proficiency: 75,
-      description: "バックエンド開発に使用",
+      description: "Used for backend development",
       category: "Backend",
     },
     {
       name: "TailwindCSS",
       experience: "2 years",
       proficiency: 85,
-      description: "スタイリングに使用",
+      description: "Used for styling",
       category: "Styling",
     },
     {
       name: "Golang",
       experience: "1 years",
       proficiency: 70,
-      description: "バックエンド開発に使用",
+      description: "Used for backend development",
       category: "Language",
     },
   ];
@@ -96,7 +96,7 @@ export default function Skills() {
               </div>
             </div>
 
-            {/* プログレスバー */}
+            {/* Progress bar */}
             <div className="w-full bg-muted rounded-full h-2">
               <div
                 className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"

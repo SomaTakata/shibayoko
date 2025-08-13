@@ -21,61 +21,61 @@ export default function Home() {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // スキルデータ
+  // Skills data
   const skillItems = [
     {
       name: "TypeScript",
       experience: "3 years",
       proficiency: 90,
-      description: "主要な開発言語として使用",
+      description: "Used as primary development language",
       category: "Language",
     },
     {
       name: "React",
       experience: "3 years",
       proficiency: 85,
-      description: "フロントエンド開発のメインフレームワーク",
+      description: "Main framework for frontend development",
       category: "Frontend",
     },
     {
       name: "Next.js",
       experience: "2 years",
       proficiency: 80,
-      description: "Webアプリケーション開発に使用",
+      description: "Used for web application development",
       category: "Framework",
     },
     {
       name: "Node.js",
       experience: "2 years",
       proficiency: 75,
-      description: "バックエンド開発に使用",
+      description: "Used for backend development",
       category: "Backend",
     },
     {
       name: "TailwindCSS",
       experience: "2 years",
       proficiency: 85,
-      description: "スタイリングに使用",
+      description: "Used for styling",
       category: "Styling",
     },
     {
       name: "Golang",
       experience: "1 years",
       proficiency: 70,
-      description: "バックエンド開発に使用",
+      description: "Used for backend development",
       category: "Language",
     },
   ];
 
-  // ニュースデータ
+  // News data
   const newsItems = [
     {
       icon: <BookOpen className="w-5 h-5 text-muted-foreground/60" />,
       date: "2024.9.17",
-      title: "LayerXサマーインターン体験記を投稿しました！",
+      title: "Posted LayerX Summer Internship Experience Report!",
       description:
-        "LayerXでの3ヶ月間のサマーインターンシップでの経験や学んだことについて詳しく書きました。",
-      category: "インターン体験記",
+        "Detailed writeup about my experiences and learnings during a 3-month summer internship at LayerX.",
+      category: "Internship Report",
       link: "https://zenn.dev/soma_takata/articles/3a5ad127b57e04",
       type: "Blog Post",
     },
@@ -83,101 +83,101 @@ export default function Home() {
       icon: <Users className="w-5 h-5 text-muted-foreground/60" />,
       date: "2024.7.26",
       title:
-        "ハウテレビジョンでの3ヶ月のエンジニアインターン体験記投稿しました！",
+        "Posted 3-month engineer internship experience report at How Television!",
       description:
-        "ハウテレビジョンでのエンジニアインターンシップでの経験と成長について記録しました。",
-      category: "インターン体験記",
+        "Documented my experiences and growth during the engineering internship at How Television.",
+      category: "Internship Report",
       link: "https://howtv.hatenablog.com/entry/2024/07/26/174358",
       type: "Blog Post",
     },
   ];
 
-  // 経歴データをターミナル風に変更
+  // Timeline data in terminal style
   const timelineItems = [
     {
       date: "2022.4",
-      output: "芝浦工業大学 入学",
-      description: "情報工学科での学習を開始",
+      output: "Entered Shibaura Institute of Technology",
+      description: "Started studying in Computer Science Department",
       link: "https://www.shibaura-it.ac.jp/",
       type: "education",
     },
     {
       date: "2023.5",
-      output: "株式会社リクルート",
-      description: "フロントエンド開発 (10か月)",
+      output: "Recruit Co., Ltd.",
+      description: "Frontend development (10 months)",
       link: "https://www.recruit.co.jp/",
       type: "work",
     },
     {
       date: "2023.11",
-      output: "株式会社MichibikuGroup",
-      description: "フロントエンド開発 (2か月)",
+      output: "MichibikuGroup Co., Ltd.",
+      description: "Frontend development (2 months)",
       link: "https://michibikugroup.co.jp/",
       type: "work",
     },
     {
       date: "2024.3",
-      output: "TechNova創設 代表",
-      description: "プログラミングサークルの設立",
+      output: "Founded TechNova as Representative",
+      description: "Established programming circle",
       link: "https://x.com/ShibaYoko_SIT",
       type: "leadership",
     },
     {
       date: "2024.4",
-      output: "株式会社ハウテレビジョン",
-      description: "フロントエンド開発 (3か月)",
+      output: "How Television Co., Ltd.",
+      description: "Frontend development (3 months)",
       link: "https://howtelevision.co.jp/",
       type: "work",
     },
     {
       date: "2024.9",
-      output: "株式会社LayerX",
-      description: "フルスタック開発 (2週間)",
+      output: "LayerX Inc.",
+      description: "Full-stack development (2 weeks)",
       link: "https://layerx.co.jp/",
       type: "work",
     },
     {
       date: "2024.12",
-      output: "株式会社メドレー",
-      description: "フルスタック開発 (2週間)",
+      output: "Medley Inc.",
+      description: "Full-stack development (2 weeks)",
       link: "https://www.medley.jp/",
       type: "work",
     },
     {
       date: "2025.1",
-      output: "株式会社NOT A HOTEL",
-      description: "新規機能開発 (2週間)",
+      output: "NOT A HOTEL Inc.",
+      description: "New feature development (2 weeks)",
       link: "https://notahotel.com/",
       type: "work",
     },
     {
       date: "2025.2",
-      output: "しばよこ創設 代表",
-      description: "エンジニアデザイナーサークルの設立",
+      output: "Founded ShibaYoko as Representative",
+      description: "Established engineer-designer circle",
       link: "https://x.com/ShibaYoko_SIT",
       type: "leadership",
     },
     {
       date: "2025.3",
-      output: "株式会社Nulogic",
-      description: "新規機能開発 (2ヶ月)",
+      output: "Nulogic Inc.",
+      description: "New feature development (2 months)",
       link: "https://nulogic.co.jp/",
       type: "work",
     },
     {
       date: "2025.5 - 2025.7",
-      output: "株式会社Mercari (メルカリハロ)",
-      description: "フロントエンド開発 (3ヶ月)",
+      output: "Mercari Inc. (Mercari Hallo)",
+      description: "Frontend development (3 months)",
       link: "https://hallo.mercari.com/",
       type: "work",
     },
   ];
 
-  // プロジェクトデータ
+  // Project data
   const projectItems = [
     {
       icon: <Globe className="w-5 h-5 text-muted-foreground/60" />,
-      period: "2024.2 - 現在",
+      period: "2024.2 - Present",
       title: "Portfolio",
       description: "This is a portfolio website that I made for myself.",
       technologies: ["Next.js", "React", "TypeScript", "Framer Motion"],
@@ -188,7 +188,7 @@ export default function Home() {
     {
       icon: <Sparkle className="w-5 h-5 text-muted-foreground/60" />,
       period: "2025.3 - 2025.3",
-      title: "サブスク自動解約",
+      title: "Subscription Auto-Cancel",
       description:
         "This is a service that automatically cancels subscriptions.",
       technologies: ["Next.js", "React", "TypeScript", "Browser", "Playwright"],
@@ -209,7 +209,7 @@ export default function Home() {
     },
     {
       icon: <User className="w-5 h-5 text-muted-foreground/60" />,
-      period: "2024.5 - 現在",
+      period: "2024.5 - Present",
       title: "MazeMaze",
       description: "This is a service that allows podcasting with AI.",
       technologies: ["Next.js", "React", "TypeScript", "RealTime API"],
@@ -520,9 +520,9 @@ export default function Home() {
   };
 
   return (
-    // ターミナルコンテンツ
+    // Terminal content
     <div className="max-w-full overflow-x-auto p-4 space-y-1 text-green-500 dark:text-green-400 font-mono text-sm">
-      {/* コマンド履歴表示 */}
+      {/* Command history display */}
       {commandHistory.map((entry, idx) => (
         <div key={idx} className="mb-2">
           <div className="flex items-center gap-2">
@@ -539,7 +539,7 @@ export default function Home() {
         </div>
       ))}
 
-      {/* 最終行（入力可能） */}
+      {/* Final line (input enabled) */}
       {!isTyping && (
         <div className="flex items-center gap-2">
           <span className="text-blue-500 dark:text-blue-400">

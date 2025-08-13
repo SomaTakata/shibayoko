@@ -560,7 +560,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
               <div className="flex-1 relative">
                 <div className="md:absolute inset-0 md:overflow-y-auto">
-                  {/* ここにページのコンテンツが挿入される */}
+                  {/* Page content is inserted here */}
                   {children}
                 </div>
               </div>

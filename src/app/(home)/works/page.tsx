@@ -1,11 +1,11 @@
 import { ExternalLink, Github, Sparkle, Code, Globe, User } from "lucide-react";
 
 export default function Works() {
-  // プロジェクトデータを配列で定義
+  // Define project data in an array
   const projectItems = [
     {
       icon: <Globe className="w-5 h-5 text-muted-foreground/60" />,
-      period: "2024.2 - 現在",
+      period: "2024.2 - Present",
       title: "Portfolio",
       description: "This is a portfolio website that I made for myself.",
       technologies: ["Next.js", "React", "TypeScript", "Framer Motion"],
@@ -16,7 +16,7 @@ export default function Works() {
     {
       icon: <Sparkle className="w-5 h-5 text-muted-foreground/60" />,
       period: "2025.3 - 2025.3",
-      title: "サブスク自動解約",
+      title: "Subscription Auto-Cancel",
       description:
         "This is a service that automatically cancels subscriptions.",
       technologies: ["Next.js", "React", "TypeScript", "Browser", "Playwright"],
@@ -37,7 +37,7 @@ export default function Works() {
     },
     {
       icon: <User className="w-5 h-5 text-muted-foreground/60" />,
-      period: "2024.5 - 現在",
+      period: "2024.5 - Present",
       title: "MazeMaze",
       description: "This is a service that allows podcasting with AI.",
       technologies: ["Next.js", "React", "TypeScript", "RealTime API"],
@@ -57,14 +57,14 @@ export default function Works() {
             (idx === 0 ? "hover:border" : "hover:border-x")
           }
         >
-          {/* メインコンテンツ */}
+          {/* Main content */}
           <div className="flex items-start gap-4 w-full">
-            {/* アイコン */}
+            {/* Icon */}
             <span className="flex items-center text-muted-foreground border-muted-foreground/50 border-dashed justify-center w-10 h-10 bg-background border-1 rounded-full group-hover:bg-background group-hover:text-foreground  flex-shrink-0">
               {item.icon}
             </span>
 
-            {/* プロジェクト情報 */}
+            {/* Project information */}
             <div className="w-full">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs text-muted-foreground   ">
@@ -89,7 +89,7 @@ export default function Works() {
                 </p>
               )}
               <div className="flex items-center justify-between mt-6">
-                {/* 技術スタック */}
+                {/* Tech stack */}
                 <div className="flex flex-wrap gap-2">
                   {item.technologies.map((tech) => (
                     <span
@@ -101,7 +101,7 @@ export default function Works() {
                   ))}
                 </div>
 
-                {/* アクションボタン */}
+                {/* Action buttons */}
                 <div className="flex items-center gap-4">
                   {item.link && (
                     <a
@@ -128,7 +128,7 @@ export default function Works() {
             </div>
           </div>
 
-          {/* ホバー時のボーダー効果 */}
+          {/* Hover border effect */}
           <div className="absolute inset-0 border border-dashed border-transparent  rounded-lg  pointer-events-none"></div>
         </div>
       ))}
