@@ -4,8 +4,8 @@
 import ThemeToggler from "@/components/theme/toggler";
 import { Button } from "@/components/ui/button";
 import { UserProfile } from "@/components/user-profile";
-import { siteConfig } from "@/config/site.config";
-import { cn } from "@/lib/utils";
+import { siteConfig } from "@/constants/site.config";
+import { cn } from "@/utils/utils";
 import {
   PanelsTopLeft,
   Shield,

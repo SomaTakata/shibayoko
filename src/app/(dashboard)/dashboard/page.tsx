@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Github } from "lucide-react";
-import { siteConfig } from "@/config/site.config";
+import { siteConfig } from "@/constants/site.config";
 import Link from "next/link";
 
 export default async function DashboardPage() {
