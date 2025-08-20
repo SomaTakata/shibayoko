@@ -14,7 +14,7 @@ import {
 export default function ActivityPage() {
   return (
     <div className="flex justify-center items-center p-4 h-full">
-      <Card className="w-full max-w-md border-dashed border-2 rounded-none shadow-none">
+      <Card className="w-full max-w-md border-dashed border rounded-none shadow-none">
         <CardHeader className="border-b border-dashed pb-4">
           <div className="flex items-center space-x-2">
             <Terminal className="h-5 w-5" />
