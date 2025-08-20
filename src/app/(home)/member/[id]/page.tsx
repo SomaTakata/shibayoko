@@ -1,9 +1,9 @@
 import MemberDetailPage from "@/features/member/components/MemberDetailPage";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function Page({ params }: PageProps) {

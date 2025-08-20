@@ -21,8 +21,8 @@ export const siteConfig: SiteConfig = {
     url: "https://shibayoko.vercel.app",
   },
   socials: {
-    twitter: "https://x.com/shibayoko_sit",
+    x: "https://x.com/shibayoko_sit",
     linkedin: "https://www.linkedin.com/company/shibayoko",
-    instagram: "https://www.instagram.com/shibayoko_sit/",
+    instagram: "https://www.instagram.com/shibayoko_sit?igsh=NGx2a2ZpdDdmYmdr",
   },
 };
