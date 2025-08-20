@@ -10,11 +10,9 @@ export type SiteConfig = {
     url: string;
   };
   socials: {
-    github: string;
-    x_jp: string;
-    x_global: string;
-    zenn: string;
+    x: string;
     linkedin: string;
+    instagram: string;
   };
 };
 

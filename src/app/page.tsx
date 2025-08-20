@@ -111,7 +111,7 @@ export default function Home() {
                 className="relative border-dashed"
               >
                 <a
-                  href={siteConfig.socials.twitter}
+                  href={siteConfig.socials.x}
                   target="_blank"
                   className="gap-2 group"
                 >

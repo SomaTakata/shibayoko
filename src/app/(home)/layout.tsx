@@ -198,7 +198,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       className="border-dashed text-muted-foreground border-muted hover:text-primary"
                     >
                       <a
-                        href={siteConfig.socials.twitter}
+                        href={siteConfig.socials.x}
                         target="_blank"
                         className="gap-2"
                       >
@@ -432,7 +432,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className="relative border-dashed text-muted-foreground hover:text-primary"
                 >
                   <a
-                    href={siteConfig.socials.twitter}
+                    href={siteConfig.socials.x}
                     target="_blank"
                     className="gap-2 group"
                   >
