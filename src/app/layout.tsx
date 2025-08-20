@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, JetBrains_Mono, Inter } from "next/font/google";
-import "@/styles/globals.css";
-import { siteConfig } from "@/config/site.config";
-import { cn } from "@/lib/utils";
+import "@/app/globals.css";
+import { siteConfig } from "@/constants/site.config";
+import { cn } from "@/utils/utils";
 import RootProviders from "@/components/providers";
 
 const fontSans = Manrope({

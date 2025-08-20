@@ -1,7 +1,7 @@
 import ThemeToggler from "@/components/theme/toggler";
 import { Button } from "@/components/ui/button";
 import { UserProfile } from "@/components/user-profile";
-import { siteConfig } from "@/config/site.config";
+import { siteConfig } from "@/constants/site.config";
 import {
   ArrowUpRight,
   BarChart2,
