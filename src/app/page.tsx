@@ -12,11 +12,10 @@ import {
   Database,
   ArrowRight,
   Sparkle,
-  Github,
   // ArrowUpRight,
   Twitter,
   Linkedin,
-  Zap,
+  Instagram,
   Newspaper,
   Activity,
   Terminal,
@@ -55,7 +54,7 @@ export default function Home() {
                   className="hover:underline flex items-center gap-2"
                 >
                   <CircleIcon size={15} />
-                  Soma Takata
+                  しばよこ
                 </Link>
               </div>
               {/* {!isPending &&
@@ -99,71 +98,26 @@ export default function Home() {
               {/* <UserProfile className="border-dashed size-10 md:size-14" /> */}
               <ThemeToggler className="border-dashed size-10 md:size-14" />
             </div>
-            <div id="hero" className="flex flex-col p-4">
-              <h1 className="head-text-md">Soma Takata</h1>
+            <div id="hero" className="flex flex-col p-6">
+              <h1 className="head-text-md">しばよこ</h1>
               <p className="text-muted-foreground max-w-3xl">
                 {siteConfig.description}
               </p>
             </div>
-            <div id="cta" className="flex flex-wrap items-center gap-4 p-4">
+            <div id="cta" className="flex flex-wrap items-center gap-4 px-6">
               <Button
                 variant="outline"
                 asChild
                 className="relative border-dashed"
               >
                 <a
-                  href={siteConfig.socials.github}
-                  target="_blank"
-                  className="gap-2 group"
-                >
-                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Github className="size-4" />
-                  <span>GitHub</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="relative border-dashed"
-              >
-                <a
-                  href={siteConfig.socials.x_jp}
+                  href={siteConfig.socials.x}
                   target="_blank"
                   className="gap-2 group"
                 >
                   <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                   <Twitter className="size-4" />
-                  <span>JP</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="relative border-dashed"
-              >
-                <a
-                  href={siteConfig.socials.x_global}
-                  target="_blank"
-                  className="gap-2 group"
-                >
-                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Twitter className="size-4" />
-                  <span>Global</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="relative border-dashed"
-              >
-                <a
-                  href={siteConfig.socials.zenn}
-                  target="_blank"
-                  className="gap-2 group"
-                >
-                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Zap className="size-4" />
-                  <span>Zenn</span>
+                  <span>Twitter</span>
                 </a>
               </Button>
               <Button
@@ -178,7 +132,22 @@ export default function Home() {
                 >
                   <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                   <Linkedin className="size-4" />
-                  <span>Linkedin</span>
+                  <span>LinkedIn</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                asChild
+                className="relative border-dashed"
+              >
+                <a
+                  href={siteConfig.socials.instagram}
+                  target="_blank"
+                  className="gap-2 group"
+                >
+                  <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <Instagram className="size-4" />
+                  <span>Instagram</span>
                 </a>
               </Button>
             </div>
@@ -249,25 +218,24 @@ const techConfig = [
   {
     icon: <PanelsTopLeft className="size-4" />,
     category: "1",
-    name: "Experience",
-    description:
-      "A timeline of my professional background and career highlights.",
-    link: "/experience",
+    name: "About",
+    description: "しばよこの創設理由や目標、活動内容について紹介します。",
+    link: "/about",
   },
   {
     icon: <Shield className="size-4" />,
     category: "2",
-    name: "Skills",
+    name: "Member",
     description:
-      "A showcase of my technical and soft skills across various domains.",
-    link: "skills",
+      "しばよこのメンバー紹介。各メンバーの役職や特技、SNSを確認できます。",
+    link: "/member",
   },
   {
     icon: <Database className="size-4" />,
     category: "3",
     name: "Works",
     description:
-      "Selected projects that demonstrate my capabilities and creativity.",
+      "しばよこで手がけたプロジェクトや作品を確認することができます。",
     link: "/works",
   },
   {
@@ -275,7 +243,7 @@ const techConfig = [
     category: "4",
     name: "News",
     description:
-      "Latest updates, announcements, and things I'm currently working on.",
+      "しばよこの最新情報、お知らせ、イベント情報を確認することができます。",
     link: "/news",
   },
   {
@@ -283,7 +251,7 @@ const techConfig = [
     category: "5",
     name: "Terminal",
     description:
-      "An interactive terminal-style space to explore more about me.",
+      "ターミナル風のインタラクティブなコマンドラインでしばよこを探索してみてください。",
     link: "/terminal",
   },
   {
@@ -291,7 +259,7 @@ const techConfig = [
     category: "6",
     name: "Activity",
     description:
-      "GitHub activity and contributions across various open source projects.",
+      "メンバーそれぞれの活動や貢献を確認できるページとなっています！",
     link: "/activity",
   },
 ];
@@ -299,12 +267,19 @@ const techConfig = [
 export const Circle = () => {
   return (
     <svg
-      className="w-full h-full aspect-square"
-      viewBox="0 0 400 400"
+      className="w-1/2 h-1/2 aspect-square"
+      viewBox="0 0 219 183"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="200" cy="200" r="100" fill="CurrentColor" />
+      <path
+        d="M0 146.863C0 119.655 22.057 97.5977 49.2656 97.5977H159.226C164.668 97.5977 169.08 102.009 169.08 107.451V133.463C169.08 160.672 147.023 182.729 119.814 182.729H9.85312C4.41139 182.729 0 178.317 0 172.875V146.863Z"
+        fill="currentColor"
+      />
+      <path
+        d="M49.4756 49.8184C49.4756 22.6097 71.5325 0.552734 98.7412 0.552734H208.702C214.144 0.552734 218.555 4.96413 218.555 10.4059V36.4181C218.555 63.6267 196.498 85.6837 169.29 85.6837H59.3287C53.887 85.6837 49.4756 81.2723 49.4756 75.8306V49.8184Z"
+        fill="currentColor"
+      />
     </svg>
   );
 };

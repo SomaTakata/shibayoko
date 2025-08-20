@@ -87,18 +87,18 @@ export function UserProfile({ className }: { className?: string }) {
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" asChild>
           <a
-            href={siteConfig.socials.github}
+            href={siteConfig.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-between gap-2"
           >
-            <span>Github</span>
+            <span>LinkedIn</span>
             <ExternalLinkIcon className="size-4" />
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" asChild>
           <a
-            href={siteConfig.socials.x_jp}
+            href={siteConfig.socials.x}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-between gap-2"

@@ -58,7 +58,7 @@ const MockNavbar = () => {
           asChild
         >
           <a
-            href={siteConfig.socials.x_jp}
+            href={siteConfig.socials.x}
             target="_blank"
             className="flex items-center gap-2 group/nav"
           >
@@ -76,11 +76,11 @@ const MockNavbar = () => {
           asChild
         >
           <a
-            href={siteConfig.socials.github}
+            href={siteConfig.socials.x}
             target="_blank"
             className="flex items-center gap-2 group/nav"
           >
-            <span>Github</span>
+            <span>X (Twitter)</span>
             <div className="relative z-10 size-4 overflow-hidden flex items-center justify-center">
               <ArrowUpRight className="-z-10 absolute opacity-100 scale-100 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover/nav:-translate-y-5 group-hover/nav:translate-x-5 group-hover/nav:opacity-0 group-hover/nav:scale-0 transition-all duration-200" />
               <ArrowUpRight className="absolute -z-10 -bottom-4 -left-4 opacity-0 scale-0 group-hover/nav:-translate-y-[15px] group-hover/nav:translate-x-4 group-hover/nav:opacity-100 group-hover/nav:scale-100 transition-all duration-200" />

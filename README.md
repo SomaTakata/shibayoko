@@ -1,6 +1,6 @@
-# Soma
+# Shibayoko
 
-This is SomaTakata Portfolio
+This is Shibayoko Project
 
 ## Tech Stack
 
@@ -28,7 +28,7 @@ This is SomaTakata Portfolio
 1. Clone the repository
 
 ```bash
-git clone https://github.com/SomaTakata/portfolio.git
+git clone https://github.com/SomaTakata/shibayoko.git
 ```
 
 2. Install dependencies

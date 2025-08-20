@@ -13,8 +13,10 @@ type ThemeTogglerProps = {
 export default function ThemeToggler({ className }: ThemeTogglerProps) {
   const { theme, setTheme } = useTheme();
   const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setSystemTheme(mediaQuery.matches ? "dark" : "light");
 
@@ -25,6 +27,19 @@ export default function ThemeToggler({ className }: ThemeTogglerProps) {
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
+
+  if (!mounted) {
+    return (
+      <Button
+        variant="ghost"
+        className={cn("size-14 aspect-square p-0 border-l", className)}
+      >
+        <SunIcon className="size-4 md:size-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <MoonIcon className="absolute size-4 md:size-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span className="sr-only">Toggle theme</span>
+      </Button>
+    );
+  }
 
   const switchTheme = () => {
     switch (theme) {
@@ -56,7 +71,7 @@ export default function ThemeToggler({ className }: ThemeTogglerProps) {
     <Button
       onClick={toggleTheme}
       variant="ghost"
-      className={cn("size-14 aspect-square p-0", className)}
+      className={cn("size-14 aspect-square p-0 border-l", className)}
     >
       <SunIcon className="size-4 md:size-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <MoonIcon className="absolute size-4 md:size-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

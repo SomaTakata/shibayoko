@@ -10,11 +10,10 @@ import {
   PanelsTopLeft,
   Shield,
   Database,
-  Github,
   // ArrowUpRight,
   Twitter,
   Linkedin,
-  Zap,
+  Instagram,
   Newspaper,
   Activity,
   Terminal,
@@ -22,35 +21,55 @@ import {
   Circle,
   AlignJustify,
   X,
+  Search,
 } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "@/lib/auth-client";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { SearchProvider, useSearch } from "@/contexts/SearchContext";
+import { Hanuman } from "next/font/google";
+
+// Search Bar Component
+function SearchBar() {
+  const { searchQuery, setSearchQuery } = useSearch();
+
+  return (
+    <div className="relative flex-1">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+      <Input
+        placeholder="名前、役職、スキルで検索..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="pl-10 h-14 border-none shadow-none focus-visible:ring-0"
+      />
+    </div>
+  );
+}
 
 const techConfig = [
   {
     icon: <PanelsTopLeft className="size-4" />,
     category: "1",
-    name: "Experience",
-    description:
-      "A timeline of my professional background and career highlights.",
-    link: "/experience",
+    name: "About",
+    description: "しばよこの創設理由や目標、活動内容について紹介します。",
+    link: "/about",
   },
   {
-    icon: <Shield className="size-4" />,
+    icon: <User className="size-4" />,
     category: "2",
-    name: "Skills",
+    name: "Member",
     description:
-      "A showcase of my technical and soft skills across various domains.",
-    link: "skills",
+      "しばよこのメンバー紹介。各メンバーの役職や特技、SNSを確認できます。",
+    link: "/member",
   },
   {
     icon: <Database className="size-4" />,
     category: "3",
     name: "Works",
     description:
-      "Selected projects that demonstrate my capabilities and creativity.",
+      "しばよこで手がけたプロジェクトや作品を確認することができます。",
     link: "/works",
   },
   {
@@ -58,7 +77,7 @@ const techConfig = [
     category: "4",
     name: "News",
     description:
-      "Latest updates, announcements, and things I'm currently working on.",
+      "しばよこで手がけたプロジェクトや作品を確認することができます。",
     link: "/news",
   },
   {
@@ -66,7 +85,7 @@ const techConfig = [
     category: "5",
     name: "Terminal",
     description:
-      "An interactive terminal-style space to explore more about me.",
+      "ターミナル風のインタラクティブなコマンドラインでしばよこを探索してみてください。",
     link: "/terminal",
   },
   {
@@ -74,7 +93,7 @@ const techConfig = [
     category: "6",
     name: "Activity",
     description:
-      "GitHub activity and contributions across various open source projects.",
+      "メンバーそれぞれの活動や貢献を確認できるページとなっています！",
     link: "/activity",
   },
 ];
@@ -93,7 +112,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <>
+    <SearchProvider>
       {/* Mobile Modal Overlay */}
       {isMobileModalOpen && (
         <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm md:hidden">
@@ -179,57 +198,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       className="border-dashed text-muted-foreground border-muted hover:text-primary"
                     >
                       <a
-                        href={siteConfig.socials.github}
-                        target="_blank"
-                        className="gap-2"
-                      >
-                        <Github className="size-3" />
-                        <span className="text-xs">GitHub</span>
-                      </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="border-dashed text-muted-foreground hover:text-primary"
-                    >
-                      <a
-                        href={siteConfig.socials.x_jp}
+                        href={siteConfig.socials.x}
                         target="_blank"
                         className="gap-2"
                       >
                         <Twitter className="size-3" />
-                        <span className="text-xs">JP</span>
-                      </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="border-dashed text-muted-foreground hover:text-primary"
-                    >
-                      <a
-                        href={siteConfig.socials.x_global}
-                        target="_blank"
-                        className="gap-2"
-                      >
-                        <Twitter className="size-3" />
-                        <span className="text-xs">Global</span>
-                      </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="border-dashed text-muted-foreground hover:text-primary"
-                    >
-                      <a
-                        href={siteConfig.socials.zenn}
-                        target="_blank"
-                        className="gap-2"
-                      >
-                        <Zap className="size-3" />
-                        <span className="text-xs">Zenn</span>
+                        <span className="text-xs">Twitter</span>
                       </a>
                     </Button>
                     <Button
@@ -245,6 +219,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       >
                         <Linkedin className="size-3" />
                         <span className="text-xs">LinkedIn</span>
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      asChild
+                      className="border-dashed text-muted-foreground hover:text-primary"
+                    >
+                      <a
+                        href={siteConfig.socials.instagram}
+                        target="_blank"
+                        className="gap-2"
+                      >
+                        <Instagram className="size-3" />
+                        <span className="text-xs">Instagram</span>
                       </a>
                     </Button>
                   </div>
@@ -266,7 +255,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             <Link href="/" className="hover:underline flex items-center gap-2">
               <Circle size={15} />
-              Soma Takata
+              しばよこ
             </Link>
           </div>
           <ThemeToggler className="border-dashed size-10 md:size-14" />
@@ -358,30 +347,33 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 id="brand"
                 className="md:border-b w-full border-dashed flex items-center justify-start"
               >
-                <Link href="/" className="flex items-center gap-1 w-full p-3">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 w-full p-4 px-4"
+                >
                   <svg
-                    className="w-8 h-8 aspect-square"
-                    viewBox="0 0 48 48"
+                    className="w-6 h-6 aspect-square"
+                    viewBox="0 0 219 183"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <circle
-                      cx="24"
-                      cy="24"
-                      r="12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                    <path
+                      d="M0 146.863C0 119.655 22.057 97.5977 49.2656 97.5977H159.226C164.668 97.5977 169.08 102.009 169.08 107.451V133.463C169.80 160.672 147.023 182.729 119.814 182.729H9.85312C4.41139 182.729 0 178.317 0 172.875V146.863Z"
+                      fill="currentColor"
                     />
-                    <circle cx="24" cy="24" r="4" fill="currentColor" />
+                    <path
+                      d="M49.4756 49.8184C49.4756 22.6097 71.5325 0.552734 98.7412 0.552734H208.702C214.144 0.552734 218.555 4.96413 218.555 10.4059V36.4181C218.555 63.6267 196.498 85.6837 169.29 85.6837H59.3287C53.887 85.6837 49.4756 81.2723 49.4756 75.8306V49.8184Z"
+                      fill="currentColor"
+                    />
                   </svg>
-                  <p className="text-lg">Soma Takata</p>
                 </Link>
               </div>
               {techConfig.map((tech, index) => {
                 if (
                   pathname &&
-                  pathname.replace(/^\//, "") === tech.name.toLowerCase()
+                  pathname
+                    .replace(/^\//, "")
+                    .startsWith(tech.name.toLowerCase())
                 ) {
                   return (
                     <div
@@ -411,7 +403,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 ) {
                   return (
                     <a
-                      href={tech.name.toLowerCase()}
+                      href={tech.link}
                       key={tech.name}
                       className={cn(
                         cn(
@@ -440,58 +432,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className="relative border-dashed text-muted-foreground hover:text-primary"
                 >
                   <a
-                    href={siteConfig.socials.github}
-                    target="_blank"
-                    className="gap-2 group"
-                  >
-                    <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <Github className="size-4" />
-                    <span>GitHub</span>
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  asChild
-                  className="relative border-dashed text-muted-foreground hover:text-primary"
-                >
-                  <a
-                    href={siteConfig.socials.x_jp}
+                    href={siteConfig.socials.x}
                     target="_blank"
                     className="gap-2 group"
                   >
                     <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     <Twitter className="size-4" />
-                    <span>JP</span>
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  asChild
-                  className="relative border-dashed text-muted-foreground hover:text-primary"
-                >
-                  <a
-                    href={siteConfig.socials.x_global}
-                    target="_blank"
-                    className="gap-2 group"
-                  >
-                    <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <Twitter className="size-4" />
-                    <span>Global</span>
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  asChild
-                  className="relative border-dashed text-muted-foreground hover:text-primary"
-                >
-                  <a
-                    href={siteConfig.socials.zenn}
-                    target="_blank"
-                    className="gap-2 group"
-                  >
-                    <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <Zap className="size-4" />
-                    <span>Zenn</span>
+                    <span>Twitter</span>
                   </a>
                 </Button>
                 <Button
@@ -506,7 +453,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   >
                     <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     <Linkedin className="size-4" />
-                    <span>Linkedin</span>
+                    <span>LinkedIn</span>
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  asChild
+                  className="relative border-dashed text-muted-foreground hover:text-primary"
+                >
+                  <a
+                    href={siteConfig.socials.instagram}
+                    target="_blank"
+                    className="gap-2 group"
+                  >
+                    <div className="w-full h-[1px] bg-linear-to-r from-primary/0 via-primary to-primary/0 absolute top-0 -left-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <Instagram className="size-4" />
+                    <span>Instagram</span>
                   </a>
                 </Button>
               </div>
@@ -517,7 +479,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 id="nav"
                 className="hidden w-full md:flex items-center justify-end border-b border-dashed divide-x"
               >
-                <ThemeToggler className="border-dashed size-10 md:size-14" />
+                {pathname?.startsWith("/member") && (
+                  <div className="flex items-center flex-1 border-none divide-x">
+                    {pathname === "/member" && (
+                      <div className="flex-1 px-4">
+                        <SearchBar />
+                      </div>
+                    )}
+                    {pathname !== "/member" && (
+                      <Button
+                        variant="ghost"
+                        asChild
+                        className="h-14 border-r border-dashed rounded-none hover:bg-muted/50"
+                      >
+                        <Link
+                          href="/member"
+                          className="flex items-center gap-2"
+                        >
+                          <span>←</span>
+                          <span>メンバー一覧に戻る</span>
+                        </Link>
+                      </Button>
+                    )}
+                  </div>
+                )}
+                <ThemeToggler className="border-dashed size-10 md:size-14" />{" "}
                 {/* {!isPending &&
                   (session ? (
                     <Button
@@ -568,6 +554,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-    </>
+    </SearchProvider>
   );
 }
