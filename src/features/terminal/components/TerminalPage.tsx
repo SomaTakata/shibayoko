@@ -36,98 +36,11 @@ export default function TerminalPage() {
     switch (lowerCommand) {
       case "help":
         response =
-          "Available commands: help, ls, cat career.log, cat skills.json, cat news/, clear, whoami, pwd, date";
+          "Available commands: help, ls, cat projects/, cat news/, clear, whoami, pwd, date";
         break;
       case "ls":
-        response = "career.log  skills.json  projects/  news/";
+        response = "history.log  projects/  news/  README.md";
         break;
-      case "cat career.log":
-        response = (
-          <div>
-            {TERMINAL_TIMELINE_DATA.map((item, idx) => (
-              <div key={idx} className="mb-3 group">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <span>[{item.date}]</span>
-                  <span className="text-muted-foreground">
-                    ─────────────────────────
-                  </span>
-                </div>
-                <div className="ml-4 mt-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg">{getTypeIcon(item.type)}</span>
-                    <span
-                      className={`font-semibold ${getTypeColor(item.type)}`}
-                    >
-                      {item.output}
-                    </span>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-blue-400 transition-colors"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                  {item.description && (
-                    <div className="text-muted-foreground text-xs mt-1 ml-6">
-                      └─ {item.description}
-                    </div>
-                  )}
-                </div>
-                {idx < TERMINAL_TIMELINE_DATA.length - 1 && (
-                  <div className="text-muted-foreground mt-2">
-                    ├─────────────────────────────────────────
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        );
-        break;
-      case "cat skills.json":
-        response = (
-          <div className="space-y-3">
-            <div className="text-cyan-500 dark:text-cyan-400 font-semibold mb-4">
-              {"{"}
-            </div>
-            <div className="ml-4 space-y-4">
-              <div className="text-yellow-500 dark:text-yellow-400">
-                "skills": [
-              </div>
-              {SKILLS_DATA.map((skill, idx) => (
-                <div key={idx} className="ml-8 space-y-1">
-                  <div className="text-muted-foreground">{"{"}</div>
-                  <div className="ml-4 space-y-1">
-                    <div className="text-green-500 dark:text-green-400">
-                      "name": "{skill.name}",
-                    </div>
-                    <div className="text-green-500 dark:text-green-400">
-                      "experience": "{skill.experience}",
-                    </div>
-                    <div className="text-green-500 dark:text-green-400">
-                      "proficiency": {skill.proficiency},
-                    </div>
-                    <div className="text-green-500 dark:text-green-400">
-                      "description": "{skill.description}",
-                    </div>
-                    <div className="text-green-500 dark:text-green-400">
-                      "category": "{skill.category}"
-                    </div>
-                  </div>
-                  <div className="text-muted-foreground">
-                    {"}"}
-                    {idx < SKILLS_DATA.length - 1 ? "," : ""}
-                  </div>
-                </div>
-              ))}
-              <div className="text-yellow-500 dark:text-yellow-400">]</div>
-            </div>
-            <div className="text-cyan-500 dark:text-cyan-400 font-semibold">
-              {"}"}
-            </div>
-          </div>
-        );
         break;
       case "cat news/":
       case "cat news":
@@ -244,10 +157,10 @@ export default function TerminalPage() {
         setCommandHistory([]);
         return;
       case "whoami":
-        response = "Software Engineer & Full-stack Developer";
+        response = "ShibaYoko - 芝浦工業大学のクリエイティブサークル";
         break;
       case "pwd":
-        response = "/home/user/portfolio";
+        response = "/home/shibayoko/circle";
         break;
       case "date":
         response = new Date().toLocaleString();
@@ -322,7 +235,7 @@ export default function TerminalPage() {
         <div key={idx} className="mb-2">
           <div className="flex items-center gap-2">
             <span className="text-blue-500 dark:text-blue-400">
-              user@portfolio
+              shibayoko@terminal
             </span>
             <span className="text-primary">~</span>
             <span className="text-yellow-500  dark:text-yellow-400">$</span>
@@ -337,7 +250,7 @@ export default function TerminalPage() {
       {!isTyping && (
         <div className="flex items-center gap-2">
           <span className="text-blue-500 dark:text-blue-400">
-            user@portfolio
+            shibayoko@terminal
           </span>
           <span className="text-primary">~</span>
           <span className="text-yellow-500  dark:text-yellow-400">$</span>
