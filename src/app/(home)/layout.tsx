@@ -42,7 +42,7 @@ function SearchBar() {
         placeholder="名前、役職、スキルで検索..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="pl-10 h-14 border-none shadow-none focus-visible:ring-0"
+        className="pl-10 h-10 sm:h-14 border-none shadow-none focus-visible:ring-0 text-sm"
       />
     </div>
   );
@@ -247,21 +247,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="md:hidden sticky top-0 pt-2 bg-background z-10">
         <div
           id="nav"
-          className="w-full flex items-center justify-end border-y border-dashed divide-x"
+          className="w-full flex items-center justify-end border-y border-dashed divide-x h-12"
         >
           <div
             id="brand"
-            className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
+            className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed min-w-0"
           >
-            <Link href="/" className="hover:underline flex items-center gap-2">
-              <Circle size={15} />
-              しばよこ
+            <Link
+              href="/"
+              className="hover:underline flex items-center gap-2 truncate"
+            >
+              <Circle size={15} className="flex-shrink-0" />
+              <span className="truncate">しばよこ</span>
             </Link>
           </div>
-          <ThemeToggler className="border-dashed size-10 md:size-14" />
+          <ThemeToggler className="border-dashed size-10 flex-shrink-0" />
           <div
-            id="brand"
-            className="font-mono text-sm flex items-center h-full px-3 border-dashed cursor-pointer hover:bg-muted/50 transition-colors"
+            id="menu"
+            className="font-mono text-sm flex items-center h-full px-3 border-dashed cursor-pointer hover:bg-muted/50 transition-colors flex-shrink-0"
             onClick={toggleMobileModal}
           >
             <AlignJustify size={15} />
@@ -306,30 +309,54 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   ))} */}
           {/* <UserProfile className="border-dashed size-10 md:size-14" /> */}
         </div>
-        <div className="flex flex-col bg-background items-center justify-start group/soma border-dashed">
+        <div className="flex flex-col bg-background items-center justify-start group/soma border-b border-dashed">
           {techConfig.map((tech, index) => {
             if (
               pathname &&
-              pathname.replace(/^\//, "") === tech.name.toLowerCase()
+              pathname.replace(/^\//, "").startsWith(tech.name.toLowerCase())
             ) {
-              return (
-                <div
-                  key={tech.name}
-                  className={cn(
-                    "relative w-full p-6  transition-all duration-150 group/item border-dashed border-b"
-                  )}
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="group-hover/item:animate-pulse">
-                      {tech.icon}
-                    </span>
-                    <h1 className="text-3xl font-bold font-heading tracking-tight">
-                      {tech.name}
-                    </h1>
+              // メンバー詳細ページの場合は戻るボタンのみ表示
+              if (tech.name === "Member" && pathname?.startsWith("/member/")) {
+                return (
+                  <div key={tech.name}>
+                    <div className="md:hidden w-full p-4">
+                      <Link
+                        href="/member"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <span>←</span>
+                        <span>メンバー一覧に戻る</span>
+                      </Link>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {tech.description}
-                  </p>
+                );
+              }
+
+              return (
+                <div key={tech.name}>
+                  <div
+                    className={cn(
+                      "relative w-full p-4 sm:p-6 transition-all duration-150 group/item border-dashed border-b"
+                    )}
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="group-hover/item:animate-pulse">
+                        {tech.icon}
+                      </span>
+                      <h1 className="text-2xl sm:text-3xl font-bold font-heading tracking-tight">
+                        {tech.name}
+                      </h1>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {tech.description}
+                    </p>
+                  </div>
+                  {/* モバイル用検索バー (Memberページのみ) */}
+                  {tech.name === "Member" && pathname === "/member" && (
+                    <div className="md:hidden w-full p-2 border-b border-dashed">
+                      <SearchBar />
+                    </div>
+                  )}
                 </div>
               );
             }
@@ -342,7 +369,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full md:h-screen grid place-items-center">
         <div className="w-full max-w-7xl mx-auto border border-t-0 md:border-t border-dashed flex flex-col mb-2 md:mt-2">
           <div className="w-full flex justify-between divide-x">
-            <div className="hidden md:flex flex-col w-1/3 aspect-square bg-background items-center justify-start group/soma border-dashed">
+            <div className="hidden md:flex flex-col w-1/3 min-h-screen bg-background items-center justify-start group/soma border-dashed">
               <div
                 id="brand"
                 className="md:border-b w-full border-dashed flex items-center justify-start"
@@ -480,9 +507,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="hidden w-full md:flex items-center justify-end border-b border-dashed divide-x"
               >
                 {pathname?.startsWith("/member") && (
-                  <div className="flex items-center flex-1 border-none divide-x">
+                  <div className="flex items-center flex-1 border-none divide-x min-w-0">
                     {pathname === "/member" && (
-                      <div className="flex-1 px-4">
+                      <div className="flex-1 px-4 min-w-0">
                         <SearchBar />
                       </div>
                     )}
@@ -490,14 +517,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       <Button
                         variant="ghost"
                         asChild
-                        className="h-14 border-r border-dashed rounded-none hover:bg-muted/50"
+                        className="h-10 sm:h-14 border-r border-dashed rounded-none hover:bg-muted/50 whitespace-nowrap"
                       >
                         <Link
                           href="/member"
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-2 px-2 sm:px-4"
                         >
                           <span>←</span>
-                          <span>メンバー一覧に戻る</span>
+                          <span className="hidden sm:inline">
+                            メンバー一覧に戻る
+                          </span>
+                          <span className="sm:hidden">戻る</span>
                         </Link>
                       </Button>
                     )}
@@ -544,8 +574,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   ))} */}
                 {/* <UserProfile className="border-dashed size-10 md:size-14" /> */}
               </div>
-              <div className="flex-1 relative">
-                <div className="md:absolute inset-0 md:overflow-y-auto">
+              <div className="flex-1 relative min-h-0">
+                <div className="h-full md:absolute inset-0 md:overflow-y-auto">
                   {/* Page content is inserted here */}
                   {children}
                 </div>
