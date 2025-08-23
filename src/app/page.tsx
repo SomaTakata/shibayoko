@@ -104,7 +104,10 @@ export default function Home() {
                 {siteConfig.description}
               </p>
             </div>
-            <div id="cta" className="flex flex-wrap items-center gap-4 px-6">
+            <div
+              id="cta"
+              className="flex flex-wrap items-center gap-4 px-6 pb-6"
+            >
               <Button
                 variant="outline"
                 asChild

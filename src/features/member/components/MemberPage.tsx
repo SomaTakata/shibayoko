@@ -25,9 +25,9 @@ export default function MemberPage() {
   }, [searchQuery]);
 
   return (
-    <div className="flex flex-col gap-6 p-6">
+    <div className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6">
       {/* メンバーカード */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filteredMembers.map((member) => (
           <MemberCard key={member.id} member={member} />
         ))}
@@ -74,19 +74,19 @@ function MemberCard({ member }: MemberCardProps) {
 
   return (
     <Link href={`/member/${member.id}`}>
-      <div className="border border-dashed rounded-lg p-6 hover:bg-muted/50 transition-all duration-200 cursor-pointer group">
+      <div className="border border-dashed rounded-lg p-4 sm:p-6 hover:bg-muted/50 transition-all duration-200 cursor-pointer group">
         {/* アバターとプロフィール */}
-        <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-lg font-bold text-secondary">
+        <div className="flex items-start gap-3 sm:gap-4 mb-4">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+            <span className="text-base sm:text-lg font-bold text-secondary">
               {member.name.charAt(0)}
             </span>
           </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-base sm:text-lg group-hover:text-primary transition-colors truncate">
               {member.name}
             </h3>
-            <p className="text-sm text-muted-foreground">{member.role}</p>
+            <p className="text-sm text-muted-foreground truncate">{member.role}</p>
             <p className="text-xs text-muted-foreground mt-1">
               参加日: {new Date(member.joinDate).toLocaleDateString("ja-JP")}
             </p>
@@ -100,14 +100,14 @@ function MemberCard({ member }: MemberCardProps) {
 
         {/* スキル */}
         <div className="mb-4">
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1 sm:gap-2">
             {member.skills.slice(0, 3).map((skill) => (
-              <Badge key={skill} variant="secondary" className="text-xs">
+              <Badge key={skill} variant="secondary" className="text-xs px-2 py-1">
                 {skill}
               </Badge>
             ))}
             {member.skills.length > 3 && (
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs px-2 py-1">
                 +{member.skills.length - 3}
               </Badge>
             )}
@@ -115,14 +115,14 @@ function MemberCard({ member }: MemberCardProps) {
         </div>
 
         {/* ソーシャルリンク */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {Object.entries(member.socials).map(
             ([platform, url]) =>
               url && (
                 <button
                   key={platform}
                   onClick={(e) => handleSocialClick(e, url)}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors p-1 rounded hover:bg-muted/30"
                   aria-label={`${member.name}の${platform}を開く`}
                 >
                   {getSocialIcon(platform)}
